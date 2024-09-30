@@ -37,14 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();                                      // Send using SMTP
         $mail->Host       = 'smtp-mail.outlook.com';          // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                             // Enable SMTP authentication
-        $mail->Username   = 'you@example.com';                // SMTP username
-        $mail->Password   = 'yourpassword';                   // SMTP password
+        $mail->Username   = 'jpaucek@zemantool.com';                // SMTP username
+        $mail->Password   = '~69Newport~';                   // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption
         $mail->Port       = 587;                              // TCP port to connect to
 
         // Recipients
-        $mail->setFrom('no-reply@yourdomain.com', 'Request Form');
-        $mail->addAddress('hr@zemantool.com');                // Add recipient
+        $mail->setFrom('no-reply@zemantool.com', 'Request Form');
+        $mail->addAddress('jpaucek32@gmail.com');                // Add recipient
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
