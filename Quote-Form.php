@@ -67,8 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fileType    = $_FILES['file']['type'];
 
             // Validate file type and size (optional but recommended)
-            $allowedTypes = ['application/pdf', 'image/jpeg', 'image/png'];
-            $maxFileSize  = 5 * 1024 * 1024; // 5 MB
+            $allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'drawing/dxf'];
+            $maxFileSize  = 5 * 1024 * 1024; // 10 MB
 
             if (in_array($fileType, $allowedTypes) && $fileSize <= $maxFileSize) {
                 $mail->addAttachment($fileTmpPath, $fileName);
