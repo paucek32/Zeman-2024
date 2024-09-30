@@ -3,129 +3,338 @@
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta name="description" content="Precision Manufacturing Solutions by Zeman Tool & Manufacturing">
-    <meta name="keywords" content="precision machining, tooling, manufacturing, Zeman Tool">
+    <meta name="description" content="Join the team at Zeman Tool & Manufacturing">
+    <meta name="keywords" content="careers, jobs, employment, Zeman Tool">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers at Zeman Tool</title>
     <!-- Favicon -->
-    <link rel="icon" href="Media/Zeman_Favicon.ico" type="image/x-icon">
+    <link rel="icon" href="Media/zeman-logos/Zeman_Favicon.ico" type="image/x-icon">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-    <!-- Swiper CSS for Carousels -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8.4.7/swiper-bundle.min.css">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style004.css">
 </head>
 <body>
 
 <!-- Header and Navigation -->
-    <header>
-        <nav>
-            <div class="container nav-container">
-                <div class="logo">
-                    <a href="index.html"><img src="Media/zeman logo.png" alt="Zeman Tool & Manufacturing Logo"></a>
+<header>
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="Media/zeman-logos/zeman logo.png" alt="Zeman Tool & Manufacturing Logo"></a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Custom-Workholding.html">Custom Workholding</a></li>
+                        <li><a href="Foundry-Tooling.html">Foundry Tooling</a></li>
+                        <li><a href="Precision-Manufactured-Parts.html">Precision Manufactured Parts</a></li>
+                        <li><a href="Built-to-Print-Tooling.html">Built-to-Print Tooling</a></li>
+                        <li><a href="Custom-Manufacturing.html">Custom Manufacturing</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="Careers.html">Careers</a></li>
+                <li><a href="Quote+Contact.html#contact">Contact</a></li>
+                <li><a href="Quote+Contact.html" class="cta-button">Request a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="careers-hero" id="home">
+    <div class="overlay"></div>
+    <div class="container careers-hero-content">
+        <h1>Start a Career at Zeman Tool!</h1>
+        <p>See our current job openings listed below.</p>
+    </div>
+</section>
+
+<!-- Job Listings Section -->
+<section id="jobs" class="jobs-section">
+    <div class="container">
+        <h2>Currently Hiring:</h2>
+
+        <!-- Filters -->
+        <div class="job-filters">
+            <div class="filter-group">
+                <label for="employment-type-filter">Employment Type:</label>
+                <select id="employment-type-filter">
+                    <option value="all">All</option>
+                    <option value="full-time">Full-Time</option>
+                    <option value="part-time">Part-Time</option>
+                    <option value="internship">Internship</option>
+                    <option value="temporary">Temporary</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="job-type-filter">Job Type:</label>
+                <select id="job-type-filter">
+                    <option value="all">All</option>
+                    <option value="machinist">Machinist</option>
+                    <option value="engineer">Engineer</option>
+                    <option value="maintenance">Maintenance</option>
+                    <option value="office">Office</option>
+					<option value="assembly">Assembly</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Job Tiles Container -->
+        <div class="job-tiles-container">
+            <!-- Engineering Internship Job Tile -->
+            <div class="job-tile" data-job-id="engineering-internship" data-employment-type="internship" data-job-type="engineer">
+                <div class="job-tile-inner">
+                    <div class="job-banner internship">Internship</div>
+                    <div class="job-image">
+                        <img src="Media/careers/internship.png" alt="Engineering Internship">
+                    </div>
+                    <h3 class="job-title">Engineering Internship</h3>
                 </div>
-                <button class="menu-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-links">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle">Services</a>
-						<ul class="dropdown-menu">
-							<li><a href="Custom-Workholding.html">Custom Workholding</a></li>
-							<li><a href="Foundry-Tooling.html">Foundry Tooling</a></li>
-							<li><a href="Precision-Manufactured-Parts.html">Precision Manufactured Parts</a></li>
-							<li><a href="Built-to-Print-Tooling.html">Built-to-Print Tooling</a></li>
-							<li><a href="Custom-Manufacturing.html">Custom Manufacturing</a></li>
-						</ul>
-                    <li><a href="index.html#about">About Us</a></li>
-					<li><a href="Careers.html">Careers</a></li>
-                    <li><a href="Quote+Contact.html#contact">Contact</a></li>
-                    <li><a href="Quote+Contact.html" class="cta-button">Request a Quote</a></li>
-                </ul>
             </div>
-        </nav>
-    </header>
 
-</body>
+            <!-- Mechanical Engineer and Tool Designer Job Tile -->
+            <div class="job-tile" data-job-id="mechanical-engineer" data-employment-type="full-time" data-job-type="engineer">
+                <div class="job-tile-inner">
+                    <div class="job-banner full-time">Full-Time</div>
+                    <div class="job-image">
+                        <img src="Media/careers/engineer.png" alt="Mechanical Engineer and Tool Designer">
+                    </div>
+                    <h3 class="job-title">Mechanical Engineer & Tool Designer</h3>
+                </div>
+            </div>
+			
+			<!-- CNC Machinist Job Tile -->
+            <div class="job-tile" data-job-id="cnc-machinist" data-employment-type="full-time" data-job-type="machinist">
+                <div class="job-tile-inner">
+                    <div class="job-banner full-time">Full-Time</div>
+                    <div class="job-image">
+                        <img src="Media/careers/machinist-02.png" alt="Machinist">
+                    </div>
+                    <h3 class="job-title">1st & 2nd Shift CNC Machinist</h3>
+                </div>
+            </div>
+			
+			<!-- Assembly Technician Job Tile -->
+            <div class="job-tile" data-job-id="assembly" data-employment-type="full-time" data-job-type="assembly">
+                <div class="job-tile-inner">
+                    <div class="job-banner full-time">Full-Time</div>
+                    <div class="job-image">
+                        <img src="Media/careers/assembly.png" alt="Assembly">
+                    </div>
+                    <h3 class="job-title">Assembly Technician</h3>
+                </div>
+            </div>
+			
+        </div>
+    </div>
+</section>
 
- <!-- Hero Section -->
-    <section class="careers-hero" id="home">
-        <div class="overlay"></div>
-        <div class="container careers-hero-content">
-          <h1>Start a career at Zeman Tool!</h1> 
-			<p>See our current job openings listed below.</p>
+<!-- Pop-ups Container -->
+<div class="job-popups">
+    <!-- Engineering Internship Pop-up -->
+    <div class="job-popup" data-job-id="engineering-internship">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h3>Engineering Internship</h3>
+            <p><strong>Employment Type:</strong> Internship</p>
+            <p><strong>Job Type:</strong> Engineer</p>
+            <p><strong>Job Description:</strong></p>
+            <p>At Zeman, we strive to produce high quality, custom mechanical tooling solutions for multiple areas of industries. As an intern, you will be immersed in our fast-paced and team-oriented environment with our mentors. They have decades of experience and a passion to share their expertise with the next generation. You could be working on automotive parts one day and rocket parts the next!  Come Join our team and experience job diversity daily!</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+                <li>Generate 2D manufacturing drawings from 3D models</li>
+                <li>Assist in the design and development of multiple mechanical components </li>
+                <li>Provides mechanical engineering support for new design development </li>
+				<li>Work directly with 2D/3D CAD models for conceptual and final designs of custom tooling</li>
+				<li>Preform product testing inspection and documentation</li>
+				<li>Research and information gathering for upcoming projects</li>
+            </ul>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Willingness to learn new techniques, methods and functions</li>
+                <li>Mechanical aptitude</li>
+                <li>Self-responsibility</li>
+                <li>Strong attention to detail</li>
+				<li>Reliability</li>
+				<li>Critical thinking and problem-solving skills</li>
+            </ul>
+			<p><strong>Perks & Benefits:</strong></p>
+			<ul>
+				<li>Opportunities for a full-time job offer at the end of your internship</li>
+				<li>Casual/informal dress environment</li>
+				<li>Networking opportunities across multiple large industries</li>
+				<li>Flexible work schedule to fit around school and sport obligations</li>
+				<li>Safe, clean and temperature-controlled environment</li>
+			</ul>
+			
+            <p><strong>How to Apply:</strong> Send your resume to <a href="mailto:hr@zemantool.com">hr@zemantool.com</a></p>
         </div>
-    </section>
-	
-	<section id="blog" class="blog-section">
-        <div class="container">
-            <h2>Currently Hiring:</h2>
-            <div class="blog-container">
-                <!-- Blog Article -->
-				<div class='sk-ww-linkedin-page-jobs' data-embed-id='25465533'></div><script 
-					src='https://widgets.sociablekit.com/linkedin-page-jobs/widget.js' async defer></script>
-	
-            </div>
+    </div>
+
+    <!-- Mechanical Engineer and Tool Designer Pop-up -->
+    <div class="job-popup" data-job-id="mechanical-engineer">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h3>Mechanical Engineer & Tool Designer</h3>
+            <p><strong>Employment Type:</strong> Full-Time</p>
+            <p><strong>Job Type:</strong> Engineer</p>
+            <p><strong>Job Description:</strong></p>
+            <p>We pride ourselves on being an independent and agile company that produces high quality solutions for multiple industry areas. Zeman specializes in creating exceptional custom workholding, foundry tooling, and in-house manufactured products. From one-of-a-kind projects for NASA, specialized Aerospace tooling, to simple machined parts, we’ve seen it all. Come Join our team and experience job diversity daily!</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+                <li>Designing and developing new tooling projects for a multitude of industries </li>
+                <li>Executing and managing mechanical designs</li>
+                <li>Work as a hands-on engineer on new developments such as prototyping, optimizing design and troubleshooting</li>
+                <li>Collaborate with clients to understand their needs and provide appropriate solutions</li>
+				<li>Oversee the maintenance and updates of tool drawings, files and records</li>
+				<li>Identify and implement improvement efforts to increase productivity and quality</li>
+            </ul>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Experience with 2D/3D Modeling</li>
+                <li>Experience in Assembly preferred</li>
+                <li>Proficient in CAD software (e.g., SolidWorks, AutoCAD)</li>
+                <li>Skilled in Excel</li>
+                <li>Work efficiently with manufacturing personnel</li>
+				<li>Strong time management </li>
+            </ul>
+			<p><strong>Perks & Benefits:</strong></p>
+			<ul>
+				<li>Industry competitive salary rates</li>
+				<li>Healthcare/Dental/Vision/Life insurance coverage</li>
+				<li>401K + company matching</li>
+				<li>Paid Time Off + Paid holidays</li>
+				<li>Training and growth opportunities</li>
+				<li>Flexible hours</li>
+			</ul>
+            <p><strong>How to Apply:</strong> Send your resume to <a href="mailto:hr@zemantool.com">hr@zemantool.com</a></p>
         </div>
-    </section>
+    </div>
 	
-	<section>
-		<div class="container">
-			<h2>Have a resume?</h2>
-				<center>
-				<p>Send your resume digitally to 
-				<a href="mailto:hr@zemantool.com">hr@zemantool.com</a> and our team will get back to you.</p>
-				</center>
-		</div>
-	</section>
-	
-	 <!-- Footer -->
-    <footer>
-        <div class="container footer-top">
-            <div class="footer-column">
-                <h4>Contact Us</h4>
-                <p>W228 N575 Westmound Dr.<br>Waukesha, WI 53186</p>
-                <p>Email: <a href="mailto:hr@zemantool.com">hr@zemantool.com</a></p>
-                <p>Phone: <a href="tel:2625495500">(262) 549-5500</a></p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#industries">Industries</a></li>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="Quote+Contact.html#contact">Contact</a></li>
-					<li><a href="Careers.html">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Newsletter</h4>
-                <form action="subscribe.php" method="post">
-                    <input type="email" name="email" placeholder="Your email address" required>
-                    <button type="submit" class="btn">Subscribe</button>
-                </form>
-            </div>
+	<!-- CNC Machinist Pop-up -->
+    <div class="job-popup" data-job-id="cnc-machinist">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h3>1st & 2nd Shift CNC Machinist</h3>
+            <p><strong>Employment Type:</strong> Full-Time</p>
+            <p><strong>Job Type:</strong> Machinist</p>
+            <p><strong>Job Description:</strong></p>
+            <p>We are looking for an experienced Mechanical Engineer and Tool Designer to join our team. The ideal candidate will have a strong background in designing complex tools and machinery for manufacturing processes.</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+                <li>Design and develop tools, jigs, and fixtures for manufacturing</li>
+                <li>Create detailed engineering drawings and specifications</li>
+                <li>Collaborate with production teams to ensure designs are feasible and cost-effective</li>
+                <li>Optimize existing designs for improved performance and efficiency</li>
+            </ul>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Bachelor's degree in Mechanical Engineering or related field</li>
+                <li>5+ years of experience in tool design and mechanical engineering</li>
+                <li>Proficient in CAD software (e.g., SolidWorks, AutoCAD)</li>
+                <li>Strong knowledge of manufacturing processes and materials</li>
+                <li>Excellent problem-solving skills and attention to detail</li>
+            </ul>
+            <p><strong>How to Apply:</strong> Send your resume to <a href="mailto:hr@zemantool.com">hr@zemantool.com</a></p>
         </div>
-        <div class="footer-bottom">
+    </div>
+	
+	<!-- Assembly Technician Pop-up -->
+    <div class="job-popup" data-job-id="assembly">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h3>Assembly Technician</h3>
+            <p><strong>Employment Type:</strong> Full-Time</p>
+            <p><strong>Job Type:</strong> Assembly</p>
+            <p><strong>Job Description:</strong></p>
+            <p>We pride ourselves on being an independent, agile company that produces high quality solutions for multiple industry areas. From one-of-a-kind projects for NASA, specialized Aerospace tooling, to simple machined parts, we’ve seen it all. Come Join our team and experience job diversity, daily.</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+                <li>Reading and interpreting technical drawings and schematics</li>
+                <li>Assembling, installing and testing equipment</li>
+                <li>Conducting quality checks of part/component functionality</li>
+                <li>Troubleshooting and performing needed repairs</li>
+            </ul>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Certification from a vocational school or community college is preferred</li>
+                <li>Previous experience in manufacturing is preferred</li>
+                <li>Proficient communications skills</li>
+                <li>Self-responsibility</li>
+                <li>Ability to multitask</li>
+				<li>Reliability</li>
+				<li>Critical thinking skills</li>
+            </ul>
+			<p><strong>Perks & Benefits:</strong></p>
+			<ul>
+				<li>Industry competitive salary rates</li>
+				<li>Healthcare/Dental/Vision/Life insurance coverage</li>
+				<li>401K + company matching</li>
+				<li>Paid Time Off + Paid holidays</li>
+				<li>Training and growth opportunities</li>
+				<li>Flexible hours</li>
+			</ul>
+            <p><strong>How to Apply:</strong> Send your resume to <a href="mailto:hr@zemantool.com">hr@zemantool.com</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<section>
+    <div class="container">
+        <h2>Have a Resume?</h2>
+        <center>
+            <p>Send your resume digitally to <a href="mailto:hr@zemantool.com">hr@zemantool.com</a> and our team will get back to you.</p>
+        </center>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-content">
+        <div class="footer-left">
+            <a href="index.html" class="footer-logo">
+                <img src="Media/zeman-logos/zeman_logo_retro.png" alt="Zeman Tool & Manufacturing Logo">
+            </a>
             <p>&copy; <span id="currentYear"></span> R.J. Zeman Tool & Manufacturing. All rights reserved.</p>
         </div>
-    </footer>
+        <div class="footer-right">
+            <div class="footer-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#industries">Industries</a>
+                <a href="index.html#about">About Us</a>
+                <a href="Quote+Contact.html#contact">Contact</a>
+                <a href="Careers.html">Careers</a>
+            </div>
+            <div class="footer-contact">
+                <p>W228 N575 Westmound Dr.<br>Waukesha, WI 53186</p>
+                <p><a href="tel:2625495500">(262) 549-5500</a></p>
+                <p><a href="mailto:hr@zemantool.com">hr@zemantool.com</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/company/zeman-tool-&-mfg/" target="_blank" aria-label="LinkedIn">
+                    <img src="Media/linkedin-white.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com/channel/UCGwkxgoRse_nxHfRrT5ENBQ" target="_blank" aria-label="YouTube">
+                    <img src="Media/youtube.png" alt="YouTube">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <!-- External Scripts -->
-    <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper@8.4.7/swiper-bundle.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="js/scripts004.js"></script>
-    <!-- Google Analytics -->
-    <!-- Replace 'UA-XXXXXXXXX-X' with your actual Tracking ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXXXXXX-X');
-    </script>
+<!-- External Scripts -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="JS/scripts004.js"></script>
+</body>
 </html>
