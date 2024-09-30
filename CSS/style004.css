@@ -6,7 +6,7 @@
     --accent-color-dark: #E68900; /* Darker shade for hover states */
     --light-gray: #f9f9f9;
     --dark-gray: #333;
-    --font-primary: 'Open Sans', Arial, sans-serif;
+    --font-primary: 'Times New Roman', Times New Roman, sans-serif;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: var(--font-primary);
 }
