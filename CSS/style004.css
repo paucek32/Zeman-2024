@@ -6,8 +6,8 @@
     --accent-color-dark: #E68900; /* Darker shade for hover states */
     --light-gray: #f9f9f9;
     --dark-gray: #333;
-    --font-primary: 'Sans-Serif', Arial, sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
+    --font-primary: 'Futura', sans-serif;
+    --font-heading: 'Futura', sans-serif;
     --font-body: var(--font-primary);
 }
 
