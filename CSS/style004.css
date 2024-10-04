@@ -1560,9 +1560,11 @@ section.alternate {
 .section-container {
     display: flex;
     flex-wrap: nowrap; /* Prevent items from wrapping */
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    box-sizing: border-box;
+    width: 100%; /* Ensure full width */
+    padding: 0; /* Remove padding to prevent overflow */
+    margin: 0; /* Remove margin */
 }
 
 /* Workholding Section */
@@ -1572,13 +1574,16 @@ section.alternate {
 
 .workholding-section .text-content {
     order: 2;
-    flex: 1 1 45%;
-    padding: 20px;
+    flex: 1 1 48%; /* Slightly less than 50% to account for padding */
+    max-width: 48%;
+    padding: 10px;
 }
 
 .workholding-section .carousel-container {
     order: 1;
-    flex: 1 1 50%;
+    flex: 1 1 48%;
+    max-width: 48%;
+    padding: 10px;
 }
 
 /* Tombstone Section */
@@ -1613,96 +1618,87 @@ section.alternate {
     flex: 1 1 50%;
 }
 
-/* Carousel Styling */
+/* Carousel Container */
 .carousel-container {
     position: relative;
-    flex: 1 1 50%;
 }
 
-.swiper {
-    width: auto;
+/* Scoped Swiper Styles for Workholding Page */
+.workholding-section .swiper {
+    width: 100%; /* Ensure swiper takes full width of container */
     padding-bottom: 40px; /* Space for navigation arrows */
 }
 
-.swiper-wrapper {
+.workholding-section .swiper-wrapper {
     align-items: center;
 }
 
-.swiper-slide {
+.workholding-section .swiper-slide {
     width: auto;
     display: flex;
+    flex-direction: column; /* Stack content vertically */
     justify-content: center;
+    align-items: center;
 }
 
-.tile {
+/* Tile Styles */
+.workholding-section .tile {
     text-align: center;
 }
 
-.tile img {
+.workholding-section .tile img {
     width: 100%;
-    max-height: 500px;
+    max-width: 300px;
+    height: auto;
     margin: 0 auto;
     display: block;
     border-radius: 8px;
 }
 
-.tile h3 {
+.workholding-section .tile h3 {
     margin-top: 15px;
     font-size: 1.2rem;
     color: var(--dark-gray);
 }
 
-.tile p {
+.workholding-section .tile p {
     font-size: 1rem;
     color: var(--dark-gray);
-	width: 50%;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 /* Navigation Arrows */
-.workholding-swiper .swiper-button-next,
-.workholding-swiper .swiper-button-prev,
-.tombstone-swiper .swiper-button-next,
-.tombstone-swiper .swiper-button-prev,
-.gaging-swiper .swiper-button-next,
-.gaging-swiper .swiper-button-prev {
+.workholding-section .swiper-button-next,
+.workholding-section .swiper-button-prev {
     color: var(--primary-color);
     top: 50%;
     transform: translateY(-50%);
+    position: absolute;
 }
 
-.swiper-button-next {
+.workholding-section .swiper-button-next {
     right: 10px;
 }
 
-.swiper-button-prev {
+.workholding-section .swiper-button-prev {
     left: 10px;
-}
-
-/* Gradient Overlays */
-.carousel-gradient-left {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), transparent);
-}
-
-.carousel-gradient-right {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1), transparent);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .section-container {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
 
-    .carousel-container,
-    .text-content {
+    .workholding-section .text-content,
+    .workholding-section .carousel-container {
         flex: 1 1 100%;
         max-width: 100%;
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none;
+    .workholding-section .swiper-button-next,
+    .workholding-section .swiper-button-prev {
+        display: none; /* Hide navigation arrows on small screens */
     }
 }
