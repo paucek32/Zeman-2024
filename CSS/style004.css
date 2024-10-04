@@ -906,15 +906,14 @@ footer {
 }
 
 .machine-image {
-	height: 500px
     width: 100%;
     overflow: hidden;
     border-radius: 8px;
 }
 
 .machine-image img {
-    width: auto;
-    height: 400px;
+    width: 100%;
+    height: auto;
     transition: transform 0.3s;
 }
 
