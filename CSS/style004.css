@@ -1655,6 +1655,7 @@ section.alternate {
 .tile p {
     font-size: 1rem;
     color: var(--dark-gray);
+	width: 50%;
 }
 
 /* Navigation Arrows */
