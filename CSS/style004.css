@@ -849,6 +849,7 @@ footer {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    /* Footer Adjustments */
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -875,9 +876,8 @@ footer {
     .footer-contact {
         margin-top: 10px;
     }
-}
 
-    /* Hero Section */
+    /* Hero Section Adjustments */
     .hero h1 {
         font-size: 2rem;
     }
@@ -885,7 +885,7 @@ footer {
     .hero p {
         font-size: 1.2rem;
     }
-}
+} /* Closing brace for @media (max-width: 768px) */
 
 /* Machines Carousel Section */
 .machines-carousel-section {
