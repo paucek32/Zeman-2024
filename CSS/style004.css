@@ -1555,7 +1555,8 @@ section.alternate {
     background-color: var(--light-gray);
 }
 
-.container {
+/* New Section Container */
+.section-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1563,17 +1564,24 @@ section.alternate {
 }
 
 /* Workholding Section */
-.workholding-content,
-.tombstone-content,
-.gaging-content {
+.workholding-section .section-container {
     flex-direction: row;
 }
 
-.workholding-section .text-content,
-.gaging-section .text-content {
+.workholding-section .text-content {
     order: 2;
     flex: 1 1 45%;
     padding: 20px;
+}
+
+.workholding-section .carousel-container {
+    order: 1;
+    flex: 1 1 50%;
+}
+
+/* Tombstone Section */
+.tombstone-section .section-container {
+    flex-direction: row;
 }
 
 .tombstone-section .text-content {
@@ -1582,14 +1590,24 @@ section.alternate {
     padding: 20px;
 }
 
-.workholding-section .carousel-container,
-.gaging-section .carousel-container {
-    order: 1;
+.tombstone-section .carousel-container {
+    order: 2;
     flex: 1 1 50%;
 }
 
-.tombstone-section .carousel-container {
+/* Gaging Section */
+.gaging-section .section-container {
+    flex-direction: row;
+}
+
+.gaging-section .text-content {
     order: 2;
+    flex: 1 1 45%;
+    padding: 20px;
+}
+
+.gaging-section .carousel-container {
+    order: 1;
     flex: 1 1 50%;
 }
 
@@ -1634,8 +1652,12 @@ section.alternate {
 }
 
 /* Navigation Arrows */
-.swiper-button-next,
-.swiper-button-prev {
+.workholding-swiper .swiper-button-next,
+.workholding-swiper .swiper-button-prev,
+.tombstone-swiper .swiper-button-next,
+.tombstone-swiper .swiper-button-prev,
+.gaging-swiper .swiper-button-next,
+.gaging-swiper .swiper-button-prev {
     color: var(--primary-color);
     top: 50%;
     transform: translateY(-50%);
@@ -1649,38 +1671,24 @@ section.alternate {
     left: 10px;
 }
 
-/* Hide Pagination Dots */
-.swiper-pagination {
-    display: none;
-}
-
 /* Gradient Overlays */
-.carousel-gradient-left,
-.carousel-gradient-right {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    z-index: 2;
-    pointer-events: none;
-}
-
 .carousel-gradient-left {
     left: 0;
-    background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.5));
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), transparent);
 }
 
 .carousel-gradient-right {
     right: 0;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5));
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), transparent);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .workholding-content,
-    .tombstone-content,
-    .gaging-content {
+    .workholding-section .section-container,
+    .tombstone-section .section-container,
+    .gaging-section .section-container {
         flex-direction: column;
+        align-items: center;
     }
     .text-content,
     .carousel-container {
