@@ -906,6 +906,7 @@ footer {
 }
 
 .machine-image {
+	height: 500px
     width: 100%;
     overflow: hidden;
     border-radius: 8px;
@@ -1639,8 +1640,7 @@ section.alternate {
 
 .tile img {
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    max-height: 500px;
     margin: 0 auto;
     display: block;
     border-radius: 8px;
