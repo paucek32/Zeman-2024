@@ -1544,3 +1544,151 @@ input[type="file"]::-webkit-file-upload-button:hover {
         padding: 5px 50px;
     }
 }
+
+
+/* General Section Styling */
+section {
+    padding: 60px 0;
+}
+
+section.alternate {
+    background-color: var(--light-gray);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Workholding Section */
+.workholding-content,
+.tombstone-content,
+.gaging-content {
+    flex-direction: row;
+}
+
+.workholding-section .text-content,
+.gaging-section .text-content {
+    order: 2;
+    flex: 1 1 45%;
+    padding: 20px;
+}
+
+.tombstone-section .text-content {
+    order: 1;
+    flex: 1 1 45%;
+    padding: 20px;
+}
+
+.workholding-section .carousel-container,
+.gaging-section .carousel-container {
+    order: 1;
+    flex: 1 1 50%;
+}
+
+.tombstone-section .carousel-container {
+    order: 2;
+    flex: 1 1 50%;
+}
+
+/* Carousel Styling */
+.carousel-container {
+    position: relative;
+    flex: 1 1 50%;
+}
+
+.swiper {
+    width: 100%;
+    padding-bottom: 40px; /* Space for navigation arrows */
+}
+
+.swiper-wrapper {
+    align-items: center;
+}
+
+.swiper-slide {
+    width: auto;
+}
+
+.tile {
+    text-align: center;
+}
+
+.tile img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.tile h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.tile p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+/* Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+/* Hide Pagination Dots */
+.swiper-pagination {
+    display: none;
+}
+
+/* Gradient Overlays */
+.carousel-gradient-left,
+.carousel-gradient-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel-gradient-left {
+    left: 0;
+    background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.5));
+}
+
+.carousel-gradient-right {
+    right: 0;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5));
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .workholding-content,
+    .tombstone-content,
+    .gaging-content {
+        flex-direction: column;
+    }
+    .text-content,
+    .carousel-container {
+        order: unset;
+        flex: 1 1 100%;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}

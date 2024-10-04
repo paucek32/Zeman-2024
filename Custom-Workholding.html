@@ -63,6 +63,135 @@
     </div>
 </section>
 
+<!-- Workholding Fixtures Section -->
+<section class="workholding-section alternate">
+    <div class="container workholding-content">
+        <!-- Carousel -->
+        <div class="carousel-container">
+            <div class="swiper workholding-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <!-- Repeat this slide for each tile (8 in total) -->
+                    <div class="swiper-slide">
+                        <div class="tile">
+                            <img src="Media/WorkholdingFixtures/image1.jpg" alt="Workholding Fixture 1">
+                            <h3>Fixture Title 1</h3>
+                            <p>Short description or caption for fixture 1.</p>
+                        </div>
+                    </div>
+                    <!-- Add more slides here -->
+                    <!-- ... -->
+                    <!-- Example for the 8th slide -->
+                    <div class="swiper-slide">
+                        <div class="tile">
+                            <img src="Media/WorkholdingFixtures/image8.jpg" alt="Workholding Fixture 8">
+                            <h3>Fixture Title 8</h3>
+                            <p>Short description or caption for fixture 8.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Gradient Overlays -->
+                <div class="carousel-gradient-left"></div>
+                <div class="carousel-gradient-right"></div>
+            </div>
+        </div>
+        <!-- Text Content -->
+        <div class="text-content">
+            <h2>Workholding Fixtures</h2>
+            <p>Template text for workholding fixtures. You can replace this with your own content later.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Tombstone Fixtures Section -->
+<section class="tombstone-section">
+    <div class="container tombstone-content">
+        <!-- Text Content -->
+        <div class="text-content">
+            <h2>Tombstone Fixtures</h2>
+            <p>Template text for tombstone fixtures. You can replace this with your own content later.</p>
+        </div>
+        <!-- Carousel -->
+        <div class="carousel-container">
+            <div class="swiper tombstone-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <!-- Repeat this slide for each tile (3 in total) -->
+                    <div class="swiper-slide">
+                        <div class="tile">
+                            <img src="Media/TombstoneFixtures/image1.jpg" alt="Tombstone Fixture 1">
+                            <h3>Tombstone Title 1</h3>
+                            <p>Short description or caption for tombstone 1.</p>
+                        </div>
+                    </div>
+                    <!-- Add more slides here -->
+                    <!-- ... -->
+                    <!-- Example for the 3rd slide -->
+                    <div class="swiper-slide">
+                        <div class="tile">
+                            <img src="Media/TombstoneFixtures/image3.jpg" alt="Tombstone Fixture 3">
+                            <h3>Tombstone Title 3</h3>
+                            <p>Short description or caption for tombstone 3.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Gradient Overlays -->
+                <div class="carousel-gradient-left"></div>
+                <div class="carousel-gradient-right"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gaging and Testing Equipment Section -->
+<section class="gaging-section alternate">
+    <div class="container gaging-content">
+        <!-- Carousel -->
+        <div class="carousel-container">
+            <div class="swiper gaging-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <!-- Repeat this slide for each tile (3 in total) -->
+                    <div class="swiper-slide">
+                        <div class="tile">
+                            <img src="Media/GagingEquipment/image1.jpg" alt="Gaging Equipment 1">
+                            <h3>Gaging Title 1</h3>
+                            <p>Short description or caption for gaging equipment 1.</p>
+                        </div>
+                    </div>
+                    <!-- Add more slides here -->
+                    <!-- ... -->
+                    <!-- Example for the 3rd slide -->
+                    <div class="swiper-slide">
+                        <div class="tile">
+                            <img src="Media/GagingEquipment/image3.jpg" alt="Gaging Equipment 3">
+                            <h3>Gaging Title 3</h3>
+                            <p>Short description or caption for gaging equipment 3.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Gradient Overlays -->
+                <div class="carousel-gradient-left"></div>
+                <div class="carousel-gradient-right"></div>
+            </div>
+        </div>
+        <!-- Text Content -->
+        <div class="text-content">
+            <h2>Gaging and Testing Equipment</h2>
+            <p>Template text for gaging and testing equipment. You can replace this with your own content later.</p>
+        </div>
+    </div>
+</section>
+
 <!-- Footer -->
     <footer>
     <div class="container footer-content">
@@ -99,18 +228,77 @@
 
 
  <!-- External Scripts -->
-    <!-- Swiper JS -->
+<!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@8.4.7/swiper-bundle.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="JS/scripts004.js"></script>
-    <!-- Google Analytics -->
-    <!-- Replace 'UA-XXXXXXXXX-X' with your actual Tracking ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXXXXXX-X');
-    </script>
+<!-- Custom JavaScript -->
+<script src="JS/scripts004.js"></script>
+<!-- Initialize Swiper Carousels -->
+<script>
+    // Workholding Fixtures Swiper
+    var workholdingSwiper = new Swiper('.workholding-swiper', {
+        loop: true,
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+        centeredSlides: true,
+        navigation: {
+            nextEl: '.workholding-swiper .swiper-button-next',
+            prevEl: '.workholding-swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: null,
+        },
+    });
+
+    // Tombstone Fixtures Swiper
+    var tombstoneSwiper = new Swiper('.tombstone-swiper', {
+        loop: true,
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+        centeredSlides: true,
+        navigation: {
+            nextEl: '.tombstone-swiper .swiper-button-next',
+            prevEl: '.tombstone-swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: null,
+        },
+    });
+
+    // Gaging Equipment Swiper
+    var gagingSwiper = new Swiper('.gaging-swiper', {
+        loop: true,
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 1.2,
+        spaceBetween: 20,
+        centeredSlides: true,
+        navigation: {
+            nextEl: '.gaging-swiper .swiper-button-next',
+            prevEl: '.gaging-swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: null,
+        },
+    });
+</script>
+<!-- Google Analytics -->
+<!-- Replace 'UA-XXXXXXXXX-X' with your actual Tracking ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXXXX-X');
+</script>
 </body>
 </html>
