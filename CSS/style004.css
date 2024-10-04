@@ -1688,18 +1688,17 @@ section.alternate {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    .workholding-section .section-container,
-    .tombstone-section .section-container,
-    .gaging-section .section-container {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 1024px) {
+    .section-container {
+        flex-wrap: wrap;
     }
-    .text-content,
-    .carousel-container {
-        order: unset;
+
+    .carousel-container,
+    .text-content {
         flex: 1 1 100%;
+        max-width: 100%;
     }
+
     .swiper-button-next,
     .swiper-button-prev {
         display: none;
