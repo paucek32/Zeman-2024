@@ -1558,7 +1558,7 @@ section.alternate {
 /* New Section Container */
 .section-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -1628,6 +1628,8 @@ section.alternate {
 
 .swiper-slide {
     width: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .tile {
@@ -1635,8 +1637,11 @@ section.alternate {
 }
 
 .tile img {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: auto;
+    margin: 0 auto;
+    display: block;
     border-radius: 8px;
 }
 
