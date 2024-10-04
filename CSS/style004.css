@@ -1558,9 +1558,10 @@ section.alternate {
 /* New Section Container */
 .section-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 /* Workholding Section */
