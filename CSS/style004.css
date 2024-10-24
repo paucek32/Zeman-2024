@@ -1645,6 +1645,13 @@ section.alternate {
     order: 1;
 }
 
+/* Override container width in Workholding Section */
+.workholding-section .container {
+    width: 100%;
+    max-width: none;
+    padding: 0; /* Remove padding if necessary */
+}
+
 /* Text Content */
 .workholding-section .text-content {
     order: 2;
