@@ -1634,10 +1634,10 @@ section.alternate {
 /* Carousel and Text Content */
 .workholding-section .carousel-container,
 .workholding-section .text-content {
-    flex: 1; /* Grow and shrink equally */
-    max-width: 50%; /* Account for padding */
-    padding: 20px; /* Adjust as needed */
-	box-sizing: border-box; /* Ensures padding is included in width */
+    flex: 1 1 50%; /* Flex-grow, flex-shrink, flex-basis */
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Carousel Container */
