@@ -1633,8 +1633,9 @@ section.alternate {
 .workholding-section .carousel-container,
 .workholding-section .text-content {
     flex: 1; /* Grow and shrink equally */
-    max-width: calc(50% - 40px); /* Account for padding */
+    max-width: 50%; /* Account for padding */
     padding: 20px; /* Adjust as needed */
+	box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 /* Carousel Container */
