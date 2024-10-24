@@ -1657,7 +1657,10 @@ section.alternate {
 
 /* Text Content */
 .workholding-section .text-content {
-    order: 2;
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: center; /* Vertically center the content */
+	order: 2;
 	text-align: left; /* Ensure text is aligned to the left */
     margin: 0; /* Remove any auto margins */
 }
