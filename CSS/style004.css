@@ -1572,8 +1572,9 @@ section.alternate {
 .tombstone-section .carousel-container,
 .tombstone-section .text-content {
     flex: 1;
-    max-width: calc(50% - 40px);
+    max-width: 50%;
     padding: 20px;
+	box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 /* Carousel Container */
@@ -1602,8 +1603,9 @@ section.alternate {
 .gaging-section .carousel-container,
 .gaging-section .text-content {
     flex: 1;
-    max-width: calc(50% - 40px);
+    max-width: 50%;
     padding: 20px;
+	box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 /* Carousel Container */
