@@ -1648,6 +1648,8 @@ section.alternate {
 /* Text Content */
 .workholding-section .text-content {
     order: 2;
+	text-align: left; /* Ensure text is aligned to the left */
+    margin: 0; /* Remove any auto margins */
 }
 
 /* Carousel Styling */
