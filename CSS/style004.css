@@ -1567,35 +1567,63 @@ section.alternate {
 }
 
 /* Tombstone Section */
-.tombstone-section .section-container {
+.tombstone-section .tombstone-content {
+    display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
+/* Carousel and Text Content */
+.tombstone-section .carousel-container,
 .tombstone-section .text-content {
-    order: 1;
-    flex: 1 1 45%;
+    flex: 1;
+    max-width: calc(50% - 40px);
     padding: 20px;
 }
 
+/* Carousel Container */
 .tombstone-section .carousel-container {
     order: 2;
-    flex: 1 1 50%;
+}
+
+/* Text Content */
+.tombstone-section .text-content {
+    order: 1;
 }
 
 /* Gaging Section */
-.gaging-section .section-container {
+.gaging-section .gaging-content {
+    display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
+/* Carousel and Text Content */
+.gaging-section .carousel-container,
 .gaging-section .text-content {
-    order: 2;
-    flex: 1 1 45%;
+    flex: 1;
+    max-width: calc(50% - 40px);
     padding: 20px;
 }
 
+/* Carousel Container */
 .gaging-section .carousel-container {
     order: 1;
-    flex: 1 1 50%;
+}
+
+/* Text Content */
+.gaging-section .text-content {
+    order: 2;
 }
 
 
