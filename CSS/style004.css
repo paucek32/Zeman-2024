@@ -1620,12 +1620,20 @@ section.alternate {
 
 
 /* Workholding Section */
+
+/* Override container width in Workholding Section */
+.workholding-section .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
 .workholding-section .workholding-content {
     display: flex;
-    flex-wrap: nowrap; /* Prevent items from wrapping */
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -1634,10 +1642,11 @@ section.alternate {
 /* Carousel and Text Content */
 .workholding-section .carousel-container,
 .workholding-section .text-content {
-    flex: 1 1 50%; /* Flex-grow, flex-shrink, flex-basis */
+    flex: 0 0 50%;
     max-width: 50%;
     padding: 20px;
     box-sizing: border-box;
+    margin: 0;
 }
 
 /* Carousel Container */
@@ -1645,18 +1654,34 @@ section.alternate {
     order: 1;
 }
 
-/* Override container width in Workholding Section */
-.workholding-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0; /* Remove padding if necessary */
-}
 
 /* Text Content */
 .workholding-section .text-content {
     order: 2;
 	text-align: left; /* Ensure text is aligned to the left */
     margin: 0; /* Remove any auto margins */
+}
+
+/* Ensure images are responsive */
+.workholding-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Remove any centering styles from text content */
+.workholding-section .text-content {
+    margin: 0;
+    text-align: left;
+}
+
+/* Temporary borders for debugging */
+.workholding-section .carousel-container {
+    border: 1px solid red; /* Remove after testing */
+}
+
+.workholding-section .text-content {
+    border: 1px solid blue; /* Remove after testing */
 }
 
 /* Carousel Styling */
