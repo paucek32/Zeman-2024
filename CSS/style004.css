@@ -1566,25 +1566,6 @@ section.alternate {
     margin: 0; /* Remove margin */
 }
 
-/* Workholding Section */
-.workholding-section .section-container {
-    flex-direction: row;
-}
-
-.workholding-section .text-content {
-    order: 2;
-    flex: 1 1 48%; /* Slightly less than 50% to account for padding */
-    max-width: 48%;
-    padding: 10px;
-}
-
-.workholding-section .carousel-container {
-    order: 1;
-    flex: 1 1 48%;
-    max-width: 48%;
-    padding: 10px;
-}
-
 /* Tombstone Section */
 .tombstone-section .section-container {
     flex-direction: row;
@@ -1617,14 +1598,40 @@ section.alternate {
     flex: 1 1 50%;
 }
 
-/* Carousel Container */
-.carousel-container {
-    position: relative;
+
+/* Workholding Section */
+.workholding-section .workholding-content {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-/* Scoped Swiper Styles for Workholding Page */
+/* Carousel and Text Content */
+.workholding-section .carousel-container,
+.workholding-section .text-content {
+    flex: 1; /* Grow and shrink equally */
+    max-width: calc(50% - 40px); /* Account for padding */
+    padding: 20px; /* Adjust as needed */
+}
+
+/* Carousel Container */
+.workholding-section .carousel-container {
+    order: 1;
+}
+
+/* Text Content */
+.workholding-section .text-content {
+    order: 2;
+}
+
+/* Carousel Styling */
 .workholding-section .swiper {
-    width: 100%; /* Ensure swiper takes full width of container */
+    width: 100%;
     padding-bottom: 40px; /* Space for navigation arrows */
 }
 
@@ -1686,12 +1693,12 @@ section.alternate {
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-    .section-container {
+    .workholding-section .workholding-content {
         flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
 
-    .workholding-section .text-content,
-    .workholding-section .carousel-container {
+    .workholding-section .carousel-container,
+    .workholding-section .text-content {
         flex: 1 1 100%;
         max-width: 100%;
     }
