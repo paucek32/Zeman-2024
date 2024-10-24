@@ -1675,14 +1675,6 @@ section.alternate {
     text-align: left;
 }
 
-/* Temporary borders for debugging */
-.workholding-section .carousel-container {
-    border: 1px solid red; /* Remove after testing */
-}
-
-.workholding-section .text-content {
-    border: 1px solid blue; /* Remove after testing */
-}
 
 /* Carousel Styling */
 .workholding-section .swiper {
