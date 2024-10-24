@@ -1555,16 +1555,6 @@ section.alternate {
     background-color: var(--light-gray);
 }
 
-/* New Section Container */
-.section-container {
-    display: flex;
-    flex-wrap: nowrap; /* Prevent items from wrapping */
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%; /* Ensure full width */
-    padding: 0; /* Remove padding to prevent overflow */
-    margin: 0; /* Remove margin */
-}
 
 /* Tombstone Section */
 .tombstone-section .tombstone-content {
