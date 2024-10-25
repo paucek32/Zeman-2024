@@ -190,92 +190,48 @@
     </div>
 </section>
 
-/* Override container width in Gaging Section */
-.gaging-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
-
-/* Gaging Content */
-.gaging-section .gaging-content {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: stretch; /* Allows flex items to stretch to equal height */
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-/* Carousel and Text Content */
-.gaging-section .carousel-container,
-.gaging-section .text-content {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-/* Carousel Container */
-.gaging-section .carousel-container {
-    order: 1;
-    /* Optional: Set a min-height to ensure the container stretches */
-    min-height: 400px; /* Adjust as needed */
-}
-
-/* Text Content */
-.gaging-section .text-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center content */
-    align-items: flex-start; /* Align items to the left horizontally */
-    order: 2;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-/* Reset Margins on Child Elements */
-.gaging-section .text-content h2,
-.gaging-section .text-content p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.gaging-section .text-content h2 {
-    margin-bottom: 20px; /* Spacing between heading and paragraph */
-}
-
-/* Ensure images are responsive */
-.gaging-section img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .gaging-section .gaging-content {
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    }
-
-    .gaging-section .carousel-container,
-    .gaging-section .text-content {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .gaging-section .carousel-container {
-        order: 1; /* Display carousel above text on small screens if desired */
-    }
-
-    .gaging-section .text-content {
-        order: 2;
-    }
-}
+<!-- Gaging and Testing Equipment Section -->
+<section class="gaging-section">
+    <div class="container gaging-content">
+        <!-- Carousel -->
+        <div class="carousel-container">
+            <div class="swiper gaging-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <!-- Repeat this slide for each tile (3 in total) -->
+                    <div class="swiper-slide">
+                        <div class="tile">
+                            <img src="Media/GagingEquipment/image1.jpg" alt="Gaging Equipment 1">
+                            <h3>Gaging Title 1</h3>
+                            <p>Short description or caption for gaging equipment 1.</p>
+                        </div>
+                    </div>
+                    <!-- Add more slides here -->
+                    <!-- ... -->
+                    <!-- Example for the 3rd slide -->
+                    <div class="swiper-slide">
+                        <div class="tile">
+                            <img src="Media/GagingEquipment/image3.jpg" alt="Gaging Equipment 3">
+                            <h3>Gaging Title 3</h3>
+                            <p>Short description or caption for gaging equipment 3.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Gradient Overlays -->
+                <div class="carousel-gradient-left"></div>
+                <div class="carousel-gradient-right"></div>
+            </div>
+        </div>
+        <!-- Text Content -->
+        <div class="text-content">
+            <h2>Gaging and Testing Equipment</h2>
+            <p>Template text for gaging and testing equipment. You can replace this with your own content later.</p>
+        </div>
+    </div>
+</section>
 
 <!-- Footer -->
     <footer>
