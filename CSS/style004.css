@@ -1556,6 +1556,8 @@ section.alternate {
 }
 
 
+/* Tombstone Section */
+
 /* Override container width in Tombstone Section */
 .tombstone-section .container {
     width: 100%;
@@ -1563,7 +1565,6 @@ section.alternate {
     padding: 0;
 }
 
-/* Tombstone Content */
 .tombstone-section .tombstone-content {
     display: flex;
     flex-wrap: nowrap;
@@ -1587,8 +1588,7 @@ section.alternate {
 
 /* Carousel Container */
 .tombstone-section .carousel-container {
-    order: 2;
-    min-height: 400px; /* Adjust as needed */
+    order: 2; /* Carousel on the right */
 }
 
 /* Text Content */
@@ -1596,28 +1596,12 @@ section.alternate {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    order: 1;
+    align-items: center;
+    order: 1; /* Text on the left */
     padding: 20px;
     box-sizing: border-box;
     margin: 0;
-}
-
-/* Center the h2 header */
-.tombstone-section .text-content h2 {
-    text-align: center;
-    width: 100%;
-}
-
-/* Reset Margins on Child Elements */
-.tombstone-section .text-content h2,
-.tombstone-section .text-content p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.tombstone-section .text-content h2 {
-    margin-bottom: 20px;
+    text-align: center; /* Left-align text */
 }
 
 /* Ensure images are responsive */
@@ -1627,10 +1611,72 @@ section.alternate {
     display: block;
 }
 
+/* Carousel Styling */
+.tombstone-section .swiper {
+    width: 100%;
+    padding-bottom: 40px; /* Space for navigation arrows */
+}
+
+.tombstone-section .swiper-wrapper {
+    align-items: center;
+}
+
+.tombstone-section .swiper-slide {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tile Styles */
+.tombstone-section .tile {
+    text-align: center;
+}
+
+.tombstone-section .tile img {
+    max-width: 500px;
+    height: auto;
+	max-height: 400px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.tombstone-section .tile h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.tombstone-section .tile p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation Arrows */
+.tombstone-section .swiper-button-next,
+.tombstone-section .swiper-button-prev {
+    color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.tombstone-section .swiper-button-next {
+    right: 10px;
+}
+
+.tombstone-section .swiper-button-prev {
+    left: 10px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .tombstone-section .tombstone-content {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
 
     .tombstone-section .carousel-container,
@@ -1639,15 +1685,14 @@ section.alternate {
         max-width: 100%;
     }
 
-    .tombstone-section .carousel-container {
-        order: 1;
-    }
-
-    .tombstone-section .text-content {
-        order: 2;
+    .tombstone-section .swiper-button-next,
+    .tombstone-section .swiper-button-prev {
+        display: none; /* Hide navigation arrows on small screens */
     }
 }
 
+
+/* Gaging Section */
 
 /* Override container width in Gaging Section */
 .gaging-section .container {
@@ -1656,7 +1701,6 @@ section.alternate {
     padding: 0;
 }
 
-/* Gaging Content */
 .gaging-section .gaging-content {
     display: flex;
     flex-wrap: nowrap;
@@ -1680,8 +1724,7 @@ section.alternate {
 
 /* Carousel Container */
 .gaging-section .carousel-container {
-    order: 1;
-    min-height: 400px; /* Adjust as needed */
+    order: 1; /* Carousel on the left */
 }
 
 /* Text Content */
@@ -1689,28 +1732,12 @@ section.alternate {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    order: 2;
+    align-items: center; 
+    order: 2; /* Text on the right */
     padding: 20px;
     box-sizing: border-box;
     margin: 0;
-}
-
-/* Center the h2 header */
-.gaging-section .text-content h2 {
-    text-align: center;
-    width: 100%;
-}
-
-/* Reset Margins on Child Elements */
-.gaging-section .text-content h2,
-.gaging-section .text-content p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.gaging-section .text-content h2 {
-    margin-bottom: 20px;
+    text-align: left; /* Left-align text */
 }
 
 /* Ensure images are responsive */
@@ -1720,10 +1747,72 @@ section.alternate {
     display: block;
 }
 
+/* Carousel Styling */
+.gaging-section .swiper {
+    width: 100%;
+    padding-bottom: 40px; /* Space for navigation arrows */
+}
+
+.gaging-section .swiper-wrapper {
+    align-items: center;
+}
+
+.gaging-section .swiper-slide {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tile Styles */
+.gaging-section .tile {
+    text-align: center;
+}
+
+.gaging-section .tile img {
+    max-width: 500px;
+    height: auto;
+	max-height: 400px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.gaging-section .tile h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.gaging-section .tile p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation Arrows */
+.gaging-section .swiper-button-next,
+.gaging-section .swiper-button-prev {
+    color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.gaging-section .swiper-button-next {
+    right: 10px;
+}
+
+.gaging-section .swiper-button-prev {
+    left: 10px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .gaging-section .gaging-content {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
 
     .gaging-section .carousel-container,
@@ -1732,12 +1821,9 @@ section.alternate {
         max-width: 100%;
     }
 
-    .gaging-section .carousel-container {
-        order: 1;
-    }
-
-    .gaging-section .text-content {
-        order: 2;
+    .gaging-section .swiper-button-next,
+    .gaging-section .swiper-button-prev {
+        display: none; /* Hide navigation arrows on small screens */
     }
 }
 
@@ -1780,11 +1866,13 @@ section.alternate {
 /* Text Content */
 .workholding-section .text-content {
     display: flex;
-    flex-direction: column; /* Arrange children vertically */
-    justify-content: center; /* Vertically center the content */
-	order: 2;
-	text-align: left; /* Ensure text is aligned to the left */
-    margin: 0; /* Remove any auto margins */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 /* Ensure images are responsive */
@@ -1826,8 +1914,9 @@ section.alternate {
 
 .workholding-section .tile img {
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
     height: auto;
+	max-height: 400px;
     margin: 0 auto;
     display: block;
     border-radius: 8px;
