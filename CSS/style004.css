@@ -1568,7 +1568,7 @@ section.alternate {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items: stretch; /* Allows flex items to stretch to equal height */
+    align-items: stretch;
     justify-content: flex-start;
     width: 100%;
     padding: 0;
@@ -1588,7 +1588,6 @@ section.alternate {
 /* Carousel Container */
 .tombstone-section .carousel-container {
     order: 2;
-    /* Optional: Set a min-height to ensure the container stretches */
     min-height: 400px; /* Adjust as needed */
 }
 
@@ -1596,12 +1595,18 @@ section.alternate {
 .tombstone-section .text-content {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center content */
-    align-items: flex-start; /* Align items to the left horizontally */
+    justify-content: center;
+    align-items: flex-start;
     order: 1;
     padding: 20px;
     box-sizing: border-box;
     margin: 0;
+}
+
+/* Center the h2 header */
+.tombstone-section .text-content h2 {
+    text-align: center;
+    width: 100%;
 }
 
 /* Reset Margins on Child Elements */
@@ -1612,7 +1617,7 @@ section.alternate {
 }
 
 .tombstone-section .text-content h2 {
-    margin-bottom: 20px; /* Spacing between heading and paragraph */
+    margin-bottom: 20px;
 }
 
 /* Ensure images are responsive */
@@ -1625,7 +1630,7 @@ section.alternate {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .tombstone-section .tombstone-content {
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        flex-wrap: wrap;
     }
 
     .tombstone-section .carousel-container,
@@ -1635,13 +1640,14 @@ section.alternate {
     }
 
     .tombstone-section .carousel-container {
-        order: 1; /* Display carousel above text on small screens if desired */
+        order: 1;
     }
 
     .tombstone-section .text-content {
         order: 2;
     }
 }
+
 
 /* Override container width in Gaging Section */
 .gaging-section .container {
@@ -1655,7 +1661,7 @@ section.alternate {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items: stretch; /* Allows flex items to stretch to equal height */
+    align-items: stretch;
     justify-content: flex-start;
     width: 100%;
     padding: 0;
@@ -1675,7 +1681,6 @@ section.alternate {
 /* Carousel Container */
 .gaging-section .carousel-container {
     order: 1;
-    /* Optional: Set a min-height to ensure the container stretches */
     min-height: 400px; /* Adjust as needed */
 }
 
@@ -1683,12 +1688,18 @@ section.alternate {
 .gaging-section .text-content {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center content */
-    align-items: flex-start; /* Align items to the left horizontally */
+    justify-content: center;
+    align-items: flex-start;
     order: 2;
     padding: 20px;
     box-sizing: border-box;
     margin: 0;
+}
+
+/* Center the h2 header */
+.gaging-section .text-content h2 {
+    text-align: center;
+    width: 100%;
 }
 
 /* Reset Margins on Child Elements */
@@ -1699,7 +1710,7 @@ section.alternate {
 }
 
 .gaging-section .text-content h2 {
-    margin-bottom: 20px; /* Spacing between heading and paragraph */
+    margin-bottom: 20px;
 }
 
 /* Ensure images are responsive */
@@ -1712,7 +1723,7 @@ section.alternate {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .gaging-section .gaging-content {
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        flex-wrap: wrap;
     }
 
     .gaging-section .carousel-container,
@@ -1722,7 +1733,7 @@ section.alternate {
     }
 
     .gaging-section .carousel-container {
-        order: 1; /* Display carousel above text on small screens if desired */
+        order: 1;
     }
 
     .gaging-section .text-content {
