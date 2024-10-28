@@ -62,6 +62,116 @@
     </div>
 </section>
 
+ <!-- Build-to-Print Services Section -->
+    <section class="build-to-print-section">
+        <div class="container build-to-print-content">
+            <!-- Carousel -->
+            <div class="carousel-container">
+                <div class="swiper build-to-print-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/drilling-fixture.jpg" alt="Drilling Fixture">
+                                <h3>Drilling Fixture</h3>
+                                <p>Build-To-Print Drill at assembly fixture.</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/assembly-fixture.jpg" alt="Assembly Fixture">
+                                <h3>Assembly Fixture</h3>
+                                <p>Used to hold gearbox components and sub assemblies during major assembly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Arrows -->
+                    <div class="swiper-button-next build-to-print-button-next"></div>
+                    <div class="swiper-button-prev build-to-print-button-prev"></div>
+                </div>
+            </div>
+            <!-- Text Content -->
+            <div class="text-content">
+                <h2>Our Build-to-Print Manufacturing Services</h2>
+                <p>We realize that your company has strict time constraints and demands project parameters. Zeman's machinery utilizes 2D and 3D technology reaching speeds of up to 42,000 RPMs. Zeman has a vast array of highly sophisticated CNC equipment, aiding in the rapid manufacturing of prototypes.
+				<br>
+				<br>
+				Your business’ financial and planning commitments are understood.  Zeman has the resources to respect your budget, and a worry-free experience is achieved through our quality prototype experience and high quality standards. Your products are being made by Zeman Tool and Manufacturing, a company that knows prototype machining inside and out.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prototyping Section -->
+    <section class="prototyping-section alternate">
+        <div class="container prototyping-content">
+            <!-- Text Content -->
+            <div class="text-content">
+                <h2>Prototyping</h2>
+                <p>Your business’ financial and planning commitments are understood.  Zeman has the resources to respect your budget, and a worry-free experience is achieved through our quality prototype experience and high quality standards. Your products are being made by Zeman Tool and Manufacturing, a company that knows prototype machining inside and out.</p>
+            </div>
+            <!-- Carousel -->
+            <div class="carousel-container">
+                <div class="swiper prototyping-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/billet-swing-arm.jpg" alt="Billet Swing Arm Prototype">
+                                <h3>Billet Swing Arm Prototype</h3>
+                                <p>Prototype manufacturing for swing arm cut from billet aluminum.</p>
+                            </div>
+                        </div>
+                      
+					  <div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/billet-wheel.jpg" alt="Billet Wheel Prototype">
+                                <h3>Billet Wheel Prototype</h3>
+                                <p>Motorcycle rim prototype machined from solid billet aluminum.</p>
+                            </div>
+                        </div>
+						
+						<div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/exhaust-tip.jpg" alt="Exhaust Tip Prototype">
+                                <h3>Exhaust Tip Prototype</h3>
+                                <p>Motorcycle exhaust tip manufactured to highest quality prototype.</p>
+                            </div>
+                        </div>
+						
+						<div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/bracket.jpg" alt="Prototype Bracket">
+                                <h3>Prototype Bracket</h3>
+                                <p>Small prototype machined bracket. Zeman brings your product to life with high quality prototype manufacturing.</p>
+                            </div>
+                        </div>
+						
+						<div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/control-arm.jpg" alt="Front-Lower Control Arm">
+                                <h3>Front-Lower Control Arm</h3>
+                                <p>Lower control arm precision machined from hardened billet steel.</p>
+                            </div>
+                        </div>
+						
+						<div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/gear-housing.jpg" alt="Gear Housing Prototype">
+                                <h3>Gear Housing</h3>
+                                <p>Gear housing machined from aluminum billet.</p>
+                            </div>
+                        </div>
+					  
+                    </div>
+                    <!-- Navigation Arrows -->
+                    <div class="swiper-button-next prototyping-button-next"></div>
+                    <div class="swiper-button-prev prototyping-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
 <!-- Footer -->
     <footer>
     <div class="container footer-content">
@@ -99,17 +209,48 @@
 
  <!-- External Scripts -->
     <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper@8.4.7/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@8.4.7/swiper-bundle.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="JS/scripts004.js"></script>
-    <!-- Google Analytics -->
-    <!-- Replace 'UA-XXXXXXXXX-X' with your actual Tracking ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <!-- Initialize Swiper Carousels -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXXXXXX-X');
+        // Build-to-Print Services Swiper
+        var buildToPrintSwiper = new Swiper('.build-to-print-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.build-to-print-button-next',
+                prevEl: '.build-to-print-button-prev',
+            },
+            pagination: {
+                el: null,
+            },
+        });
+
+        // Prototyping Swiper
+        var prototypingSwiper = new Swiper('.prototyping-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.prototyping-button-next',
+                prevEl: '.prototyping-button-prev',
+            },
+            pagination: {
+                el: null,
+            },
+        });
     </script>
 </body>
 </html>

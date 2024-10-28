@@ -2242,3 +2242,279 @@ section.alternate {
         display: none;
     }
 }
+
+/* Build-to-Print Services Section */
+
+/* Override container width */
+.build-to-print-section .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+.build-to-print-section .build-to-print-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+}
+
+/* Carousel and Text Content */
+.build-to-print-section .carousel-container,
+.build-to-print-section .text-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Carousel Container */
+.build-to-print-section .carousel-container {
+    order: 1; /* Carousel on the left */
+}
+
+/* Text Content */
+.build-to-print-section .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 2; /* Text on the right */
+    text-align: left;
+}
+
+/* Center the h2 header */
+.build-to-print-section .text-content h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* Ensure images are responsive */
+.build-to-print-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Carousel Styling */
+.build-to-print-section .swiper {
+    width: 100%;
+    padding-bottom: 40px; /* Space for navigation arrows */
+}
+
+.build-to-print-section .swiper-wrapper {
+    align-items: center;
+}
+
+.build-to-print-section .swiper-slide {
+    width: auto;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tile Styles */
+.build-to-print-section .tile {
+    text-align: center;
+}
+
+.build-to-print-section .tile img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 400px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.build-to-print-section .tile h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.build-to-print-section .tile p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation Arrows */
+.build-to-print-section .swiper-button-next,
+.build-to-print-section .swiper-button-prev {
+    color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.build-to-print-section .swiper-button-next {
+    right: 10px;
+}
+
+.build-to-print-section .swiper-button-prev {
+    left: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .build-to-print-section .build-to-print-content {
+        flex-wrap: wrap;
+    }
+
+    .build-to-print-section .carousel-container,
+    .build-to-print-section .text-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .build-to-print-section .swiper-button-next,
+    .build-to-print-section .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* Prototyping Section */
+
+/* Override container width */
+.prototyping-section .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+.prototyping-section .prototyping-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+}
+
+/* Carousel and Text Content */
+.prototyping-section .carousel-container,
+.prototyping-section .text-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Carousel Container */
+.prototyping-section .carousel-container {
+    order: 2; /* Carousel on the right */
+}
+
+/* Text Content */
+.prototyping-section .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 1; /* Text on the left */
+    text-align: left;
+}
+
+/* Center the h2 header */
+.prototyping-section .text-content h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* Ensure images are responsive */
+.prototyping-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Carousel Styling */
+.prototyping-section .swiper {
+    width: 100%;
+    padding-bottom: 40px; /* Space for navigation arrows */
+}
+
+.prototyping-section .swiper-wrapper {
+    align-items: center;
+}
+
+.prototyping-section .swiper-slide {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tile Styles */
+.prototyping-section .tile {
+    text-align: center;
+}
+
+.prototyping-section .tile img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 400px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.prototyping-section .tile h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.prototyping-section .tile p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation Arrows */
+.prototyping-section .swiper-button-next,
+.prototyping-section .swiper-button-prev {
+    color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.prototyping-section .swiper-button-next {
+    right: 10px;
+}
+
+.prototyping-section .swiper-button-prev {
+    left: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .prototyping-section .prototyping-content {
+        flex-wrap: wrap;
+    }
+
+    .prototyping-section .carousel-container,
+    .prototyping-section .text-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .prototyping-section .swiper-button-next,
+    .prototyping-section .swiper-button-prev {
+        display: none;
+    }
+}
