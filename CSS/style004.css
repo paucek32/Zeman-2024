@@ -1596,12 +1596,11 @@ section.alternate {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     order: 1; /* Text on the left */
     padding: 20px;
     box-sizing: border-box;
     margin: 0;
-    text-align: center; /* Left-align text */
+    text-align: left; /* Left-align text */
 }
 
 /* Ensure images are responsive */
@@ -1732,7 +1731,6 @@ section.alternate {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
     order: 2; /* Text on the right */
     padding: 20px;
     box-sizing: border-box;
@@ -1967,5 +1965,281 @@ section.alternate {
     .workholding-section .swiper-button-next,
     .workholding-section .swiper-button-prev {
         display: none; /* Hide navigation arrows on small screens */
+    }
+}
+
+/* Mold Castings Section */
+
+/* Override container width */
+.mold-castings-section .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+.mold-castings-section .mold-castings-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+}
+
+/* Carousel and Text Content */
+.mold-castings-section .carousel-container,
+.mold-castings-section .text-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Carousel Container */
+.mold-castings-section .carousel-container {
+    order: 1; /* Carousel on the left */
+}
+
+/* Text Content */
+.mold-castings-section .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 2; /* Text on the right */
+    text-align: left;
+}
+
+/* Center the h2 header */
+.mold-castings-section .text-content h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* Ensure images are responsive */
+.mold-castings-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Carousel Styling */
+.mold-castings-section .swiper {
+    width: 100%;
+    padding-bottom: 40px; /* Space for navigation arrows */
+}
+
+.mold-castings-section .swiper-wrapper {
+    align-items: center;
+}
+
+.mold-castings-section .swiper-slide {
+    width: auto;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tile Styles */
+.mold-castings-section .tile {
+    text-align: center;
+}
+
+.mold-castings-section .tile img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 400px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.mold-castings-section .tile h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.mold-castings-section .tile p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation Arrows */
+.mold-castings-section .swiper-button-next,
+.mold-castings-section .swiper-button-prev {
+    color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.mold-castings-section .swiper-button-next {
+    right: 10px;
+}
+
+.mold-castings-section .swiper-button-prev {
+    left: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .mold-castings-section .mold-castings-content {
+        flex-wrap: wrap;
+    }
+
+    .mold-castings-section .carousel-container,
+    .mold-castings-section .text-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .mold-castings-section .swiper-button-next,
+    .mold-castings-section .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* Pattern & Corebox Section */
+
+/* Override container width */
+.pattern-corebox-section .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+.pattern-corebox-section .pattern-corebox-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+}
+
+/* Carousel and Text Content */
+.pattern-corebox-section .carousel-container,
+.pattern-corebox-section .text-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Carousel Container */
+.pattern-corebox-section .carousel-container {
+    order: 2; /* Carousel on the right */
+}
+
+/* Text Content */
+.pattern-corebox-section .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 1; /* Text on the left */
+    text-align: left;
+}
+
+/* Center the h2 header */
+.pattern-corebox-section .text-content h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* Ensure images are responsive */
+.pattern-corebox-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Carousel Styling */
+.pattern-corebox-section .swiper {
+    width: 100%;
+    padding-bottom: 40px; /* Space for navigation arrows */
+}
+
+.pattern-corebox-section .swiper-wrapper {
+    align-items: center;
+}
+
+.pattern-corebox-section .swiper-slide {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tile Styles */
+.pattern-corebox-section .tile {
+    text-align: center;
+}
+
+.pattern-corebox-section .tile img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 400px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.pattern-corebox-section .tile h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.pattern-corebox-section .tile p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation Arrows */
+.pattern-corebox-section .swiper-button-next,
+.pattern-corebox-section .swiper-button-prev {
+    color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.pattern-corebox-section .swiper-button-next {
+    right: 10px;
+}
+
+.pattern-corebox-section .swiper-button-prev {
+    left: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .pattern-corebox-section .pattern-corebox-content {
+        flex-wrap: wrap;
+    }
+
+    .pattern-corebox-section .carousel-container,
+    .pattern-corebox-section .text-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .pattern-corebox-section .swiper-button-next,
+    .pattern-corebox-section .swiper-button-prev {
+        display: none;
     }
 }
