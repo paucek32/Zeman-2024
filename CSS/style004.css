@@ -2007,7 +2007,6 @@ section.alternate {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     order: 2; /* Text on the right */
     text-align: left;
 }
