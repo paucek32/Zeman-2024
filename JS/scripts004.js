@@ -162,3 +162,77 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Employment type or job type filter not found in the DOM.');
     }
 });
+
+// Client-side Form Validation
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const inputs = form.querySelectorAll('input, textarea');
+    
+    form.addEventListener('submit', function (event) {
+        let valid = true;
+        
+        // Clear previous validation messages
+        form.querySelectorAll('.validation-message').forEach(function (message) {
+            message.textContent = '';
+        });
+        
+        // Validate each required field
+        inputs.forEach(function (input) {
+            if (input.hasAttribute('required')) {
+                if (!input.value.trim()) {
+                    valid = false;
+                    const validationMessage = input.parentElement.querySelector('.validation-message');
+                    validationMessage.textContent = `${input.previousElementSibling.textContent.replace('*', '')} is required.`;
+                } else {
+                    // Additional validation based on input type
+                    if (input.type === 'email') {
+                        if (!validateEmail(input.value)) {
+                            valid = false;
+                            const validationMessage = input.parentElement.querySelector('.validation-message');
+                            validationMessage.textContent = 'Please enter a valid email address.';
+                        }
+                    }
+                    if (input.type === 'tel') {
+                        if (!validatePhone(input.value)) {
+                            valid = false;
+                            const validationMessage = input.parentElement.querySelector('.validation-message');
+                            validationMessage.textContent = 'Please enter a valid phone number.';
+                        }
+                    }
+                    if (input.type === 'date') {
+                        if (!validateDate(input.value)) {
+                            valid = false;
+                            const validationMessage = input.parentElement.querySelector('.validation-message');
+                            validationMessage.textContent = 'Please enter a valid date.';
+                        }
+                    }
+                }
+            }
+        });
+        
+        if (!valid) {
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+    
+    // Email validation function
+    function validateEmail(email) {
+        // Simple email regex
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    // Phone validation function
+    function validatePhone(phone) {
+        // Allow digits, spaces, parentheses, hyphens, and plus sign
+        const re = /^[\d\s\+\-\(\)]+$/;
+        return re.test(phone);
+    }
+    
+    // Date validation function
+    function validateDate(date) {
+        // Check if the date is in the format YYYY-MM-DD
+        const re = /^\d{4}-\d{2}-\d{2}$/;
+        return re.test(date);
+    }
+});

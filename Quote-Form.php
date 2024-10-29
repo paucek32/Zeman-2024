@@ -3,23 +3,25 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';  // Include PHPMailer via Composer (or include the path to PHPMailer if installed manually)
+require 'vendor/autoload.php';  // Include PHPMailer via Composer
 
 // Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $name           = $_POST['name'];
     $email          = $_POST['email'];
-    $dueDate        = $_POST['due_date'];
     $company        = $_POST['company'];
+    $phone          = $_POST['phone'];
+    $dueDate        = $_POST['due_date'];
     $specifications = $_POST['specifications'];
     $jobReference   = isset($_POST['job_reference']) ? $_POST['job_reference'] : '';
 
-    // Sanitize inputs (recommended for security)
+    // Sanitize inputs
     $name           = htmlspecialchars(strip_tags(trim($name)));
     $email          = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $dueDate        = htmlspecialchars(strip_tags(trim($dueDate)));
     $company        = htmlspecialchars(strip_tags(trim($company)));
+    $phone          = htmlspecialchars(strip_tags(trim($phone)));
+    $dueDate        = htmlspecialchars(strip_tags(trim($dueDate)));
     $specifications = htmlspecialchars(strip_tags(trim($specifications)));
     $jobReference   = htmlspecialchars(strip_tags(trim($jobReference)));
 
@@ -29,52 +31,75 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    // Validate email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo 'Invalid email address.';
+        exit;
+    }
+
     // Initialize PHPMailer
     $mail = new PHPMailer(true);
 
     try {
         // Server settings
-        $mail->isSMTP();                                      // Send using SMTP
-        $mail->Host       = 'smtp-mail.outlook.com';          // Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                             // Enable SMTP authentication
-        $mail->Username   = 'jpaucek@zemantool.com';                // SMTP username
-        $mail->Password   = '~69Newport~';                   // SMTP password
-        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption
-        $mail->Port       = 587;                              // TCP port to connect to
+        $mail->isSMTP();
+        $mail->Host       = 'smtp-mail.outlook.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = getenv('SMTP_USERNAME'); // Securely retrieve SMTP username
+        $mail->Password   = getenv('SMTP_PASSWORD'); // Securely retrieve SMTP password
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 587;
 
         // Recipients
         $mail->setFrom('no-reply@zemantool.com', 'Request Form');
-        $mail->addAddress('jpaucek32@gmail.com');                // Add recipient
+        $mail->addAddress('your-email@example.com'); // Replace with your email address
 
         // Content
-        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->isHTML(true);
         $mail->Subject = 'New Request for Quote Submitted';
         $mail->Body    = "
             <h2>New Quote Request</h2>
-            <p><strong>Name:</strong> {$name}</p>
-            <p><strong>Email:</strong> {$email}</p>
-            <p><strong>Job Reference:</strong> {$jobReference}</p>
-            <p><strong>Desired Due Date:</strong> {$dueDate}</p>
-            <p><strong>Company Name:</strong> {$company}</p>
-            <p><strong>Specifications:</strong> {$specifications}</p>
+            <table>
+                <tr><td><strong>Name:</strong></td><td>{$name}</td></tr>
+                <tr><td><strong>Email:</strong></td><td>{$email}</td></tr>
+                <tr><td><strong>Company Name:</strong></td><td>{$company}</td></tr>
+                <tr><td><strong>Phone Number:</strong></td><td>{$phone}</td></tr>
+                <tr><td><strong>Job Reference:</strong></td><td>{$jobReference}</td></tr>
+                <tr><td><strong>Desired Due Date:</strong></td><td>{$dueDate}</td></tr>
+                <tr><td><strong>Project Details:</strong></td><td>{$specifications}</td></tr>
+            </table>
         ";
 
-        // Handle file upload
-        if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
-            $fileTmpPath = $_FILES['file']['tmp_name'];
-            $fileName    = $_FILES['file']['name'];
-            $fileSize    = $_FILES['file']['size'];
-            $fileType    = $_FILES['file']['type'];
+        // Handle multiple file uploads
+        if (isset($_FILES['file']) && $_FILES['file']['error'][0] != UPLOAD_ERR_NO_FILE) {
+            $allowedTypes = [
+                'application/pdf',
+                'application/msword',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                'image/jpeg',
+                'image/png',
+                'application/dxf', // Adjust MIME type as needed
+            ];
+            $maxFileSize  = 10 * 1024 * 1024; // 10 MB
 
-            // Validate file type and size (optional but recommended)
-            $allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'drawing/dxf'];
-            $maxFileSize  = 5 * 1024 * 1024; // 10 MB
+            foreach ($_FILES['file']['tmp_name'] as $key => $tmp_name) {
+                $fileTmpPath = $_FILES['file']['tmp_name'][$key];
+                $fileName    = $_FILES['file']['name'][$key];
+                $fileSize    = $_FILES['file']['size'][$key];
+                $fileType    = $_FILES['file']['type'][$key];
+                $fileError   = $_FILES['file']['error'][$key];
 
-            if (in_array($fileType, $allowedTypes) && $fileSize <= $maxFileSize) {
-                $mail->addAttachment($fileTmpPath, $fileName);
-            } else {
-                echo 'Invalid file type or file too large.';
-                exit;
+                if ($fileError === UPLOAD_ERR_OK) {
+                    if (in_array($fileType, $allowedTypes) && $fileSize <= $maxFileSize) {
+                        $mail->addAttachment($fileTmpPath, $fileName);
+                    } else {
+                        echo 'Invalid file type or file too large.';
+                        exit;
+                    }
+                } else {
+                    echo 'Error uploading file.';
+                    exit;
+                }
             }
         }
 
@@ -82,7 +107,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->send();
         echo 'Quote request has been sent successfully.';
     } catch (Exception $e) {
-        // Log the error message (do not display sensitive info to the user)
         error_log("Mailer Error: {$mail->ErrorInfo}");
         echo 'An error occurred while sending your request. Please try again later.';
     }
