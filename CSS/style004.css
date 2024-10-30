@@ -2518,3 +2518,23 @@ section.alternate {
         display: none;
     }
 }
+
+/* Form Validation */
+.validation-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Adjusted iframe container */
+.quote-form .iframe-container {
+    width: 100%;
+    height: auto;
+}
+
+.quote-form iframe {
+    border: 0;
+    width: 100%;
+    height: 650px; /* Ensure this matches the iframe's height attribute */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}

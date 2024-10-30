@@ -52,13 +52,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Recipients
         $mail->setFrom('no-reply@zemantool.com', 'Request Form');
-        $mail->addAddress('your-email@example.com'); // Replace with your email address
+        $mail->addAddress('jpaucek@zemantool.com'); // Replace with company email address
 
         // Content
         $mail->isHTML(true);
-        $mail->Subject = 'New Request for Quote Submitted';
+        $mail->Subject = 'New Request for Quote From {$company}';
         $mail->Body    = "
-            <h2>New Quote Request</h2>
+            <h2>New RFQ:</h2>
             <table>
                 <tr><td><strong>Name:</strong></td><td>{$name}</td></tr>
                 <tr><td><strong>Email:</strong></td><td>{$email}</td></tr>
@@ -111,4 +111,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo 'An error occurred while sending your request. Please try again later.';
     }
 }
+// Send email to Zeman Tool
+$mail->send();
+
+// Now, send acknowledgment email to the user
+$ackMail = new PHPMailer(true);
+
+try {
+    // Server settings
+    $ackMail->isSMTP();
+    $ackMail->Host       = 'smtp-mail.outlook.com';
+    $ackMail->SMTPAuth   = true;
+    $ackMail->Username   = getenv('SMTP_USERNAME'); // Use environment variables
+    $ackMail->Password   = getenv('SMTP_PASSWORD');
+    $ackMail->SMTPSecure = 'tls';
+    $ackMail->Port       = 587;
+
+    // Recipients
+    $ackMail->setFrom('no-reply@zemantool.com', 'Zeman Tool & Manufacturing');
+    $ackMail->addAddress($email, $name); // User's email address
+
+    // Content
+    $ackMail->isHTML(true);
+    $ackMail->Subject = 'Thank You for Your Quote Request';
+    $ackMail->Body    = "
+        <p>Dear {$name},</p>
+        <p>Thank you for reaching out to Zeman Tool & Manufacturing. We have received your quote request and will get back to you shortly.</p>
+        <p>If you have any immediate questions, feel free to contact us at <a href='tel:2625494400'>(262) 549-4400</a>.</p>
+        <p>Best regards,<br>The R.J. Zeman Tool & Manufacturing Team</p>
+    ";
+
+    // Send acknowledgment email
+    $ackMail->send();
+
+} catch (Exception $e) {
+    error_log("Acknowledgment Mailer Error: {$ackMail->ErrorInfo}");
+    // No need to show an error to the user if acknowledgment email fails
+}
+
+// Provide feedback to the user
+echo 'Quote request has been sent successfully. A confirmation email has been sent to your email address.';
 ?>
