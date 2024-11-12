@@ -2538,3 +2538,114 @@ section.alternate {
     height: 650px; /* Ensure this matches the iframe's height attribute */
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
+
+/* Aerospace Section Styles */
+.aerospace-section1,
+.aerospace-section2 {
+    padding: 60px 0;
+}
+
+.aerospace-section2.alternate {
+    background-color: var(--light-gray); /* Alternate background color */
+}
+
+.aerospace-content {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.aerospace-content .text-content,
+.aerospace-content .carousel-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.aerospace-content .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aerospace-content .text-content h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.aerospace-content .text-content p {
+    font-family: var(--font-body);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.aerospace-content .carousel-container {
+    position: relative;
+}
+
+.tile {
+    text-align: center;
+}
+
+.tile img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tile h3 {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+}
+
+.tile p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Swiper Navigation */
+.aerospace-section1 .swiper-button-next,
+.aerospace-section1 .swiper-button-prev,
+.aerospace-section2 .swiper-button-next,
+.aerospace-section2 .swiper-button-prev {
+    color: var(--primary-color);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .aerospace-content {
+        flex-wrap: wrap;
+    }
+
+    .aerospace-content .text-content,
+    .aerospace-content .carousel-container {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .aerospace-section2 .text-content {
+        order: 2;
+    }
+}
