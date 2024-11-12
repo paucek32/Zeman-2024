@@ -60,6 +60,76 @@
     </div>
 </section>
 
+ <!-- Prototyping Section -->
+    <section class="prototyping-section alternate">
+        <div class="container prototyping-content">
+            <!-- Text Content -->
+            <div class="text-content">
+                <h2>Prototyping</h2>
+                <p>Your business’ financial and planning commitments are understood.  Zeman has the resources to respect your budget, and a worry-free experience is achieved through our quality prototype experience and high quality standards. Your products are being made by Zeman Tool and Manufacturing, a company that knows prototype machining inside and out.</p>
+            </div>
+            <!-- Carousel -->
+            <div class="carousel-container">
+                <div class="swiper prototyping-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/billet-swing-arm.jpg" alt="Billet Swing Arm Prototype">
+                                <h3>Billet Swing Arm Prototype</h3>
+                                <p>Prototype manufacturing for swing arm cut from billet aluminum.</p>
+                            </div>
+                        </div>
+                      
+					  <div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/billet-wheel.jpg" alt="Billet Wheel Prototype">
+                                <h3>Billet Wheel Prototype</h3>
+                                <p>Motorcycle rim prototype machined from solid billet aluminum.</p>
+                            </div>
+                        </div>
+						
+						<div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/exhaust-tip.jpg" alt="Exhaust Tip Prototype">
+                                <h3>Exhaust Tip Prototype</h3>
+                                <p>Motorcycle exhaust tip manufactured to highest quality prototype.</p>
+                            </div>
+                        </div>
+						
+						<div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/bracket.jpg" alt="Prototype Bracket">
+                                <h3>Prototype Bracket</h3>
+                                <p>Small prototype machined bracket. Zeman brings your product to life with high quality prototype manufacturing.</p>
+                            </div>
+                        </div>
+						
+						<div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/control-arm.jpg" alt="Front-Lower Control Arm">
+                                <h3>Front-Lower Control Arm</h3>
+                                <p>Lower control arm precision machined from hardened billet steel.</p>
+                            </div>
+                        </div>
+						
+						<div class="swiper-slide">
+                            <div class="tile">
+                                <img src="Media/page-btp/prototype-machining/gear-housing.jpg" alt="Gear Housing Prototype">
+                                <h3>Gear Housing</h3>
+                                <p>Gear housing machined from aluminum billet.</p>
+                            </div>
+                        </div>
+					  
+                    </div>
+                    <!-- Navigation Arrows -->
+                    <div class="swiper-button-next prototyping-button-next"></div>
+                    <div class="swiper-button-prev prototyping-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <!-- Footer -->
     <footer>
     <div class="container footer-content">
@@ -109,5 +179,22 @@
         gtag('js', new Date());
         gtag('config', 'UA-XXXXXXXXX-X');
     </script>
+	<!-- Initialize Swiper -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var prototypingSwiper = new Swiper('.prototyping-swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.prototyping-button-next',
+                prevEl: '.prototyping-button-prev',
+            },
+            // Optional: Add pagination or other settings
+            // pagination: {
+            //     el: '.swiper-pagination',
+            //     clickable: true,
+            // },
+        });
+    });
+</script>
 </body>
 </html>

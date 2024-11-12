@@ -73,6 +73,26 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         },
     });
+	
+	// Initialize Swiper for Aerospace Section 1
+var aerospaceSwiper1 = new Swiper('.aerospace-swiper1', {
+    navigation: {
+        nextEl: '.aerospace-button-next1',
+        prevEl: '.aerospace-button-prev1',
+    },
+    loop: true,
+    // Add additional Swiper options if needed
+});
+
+// Initialize Swiper for Aerospace Section 2
+var aerospaceSwiper2 = new Swiper('.aerospace-swiper2', {
+    navigation: {
+        nextEl: '.aerospace-button-next2',
+        prevEl: '.aerospace-button-prev2',
+    },
+    loop: true,
+    // Add additional Swiper options if needed
+});
 
     // Set Current Year in Footer
     const currentYearElement = document.getElementById('currentYear');
