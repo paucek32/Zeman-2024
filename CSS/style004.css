@@ -1558,22 +1558,15 @@ section.alternate {
 
 /* Tombstone Section */
 
-/* Override container width in Tombstone Section */
-.tombstone-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
-
 .tombstone-section .tombstone-content {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
+    justify-content: center;
+	width: 100;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
 /* Carousel and Text Content */
@@ -1583,7 +1576,7 @@ section.alternate {
     max-width: 50%;
     padding: 20px;
     box-sizing: border-box;
-    margin: 0;
+    
 }
 
 /* Carousel Container */
@@ -1693,22 +1686,15 @@ section.alternate {
 
 /* Gaging Section */
 
-/* Override container width in Gaging Section */
-.gaging-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
-
 .gaging-section .gaging-content {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
+    justify-content: center;
+	width: 100;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
 /* Carousel and Text Content */
@@ -1827,22 +1813,15 @@ section.alternate {
 
 /* Workholding Section */
 
-/* Override container width in Workholding Section */
-.workholding-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
-
 .workholding-section .workholding-content {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
+    justify-content: center;
+	width: 100;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
 /* Carousel and Text Content */
@@ -1970,21 +1949,15 @@ section.alternate {
 
 /* Mold Castings Section */
 
-/* Override container width */
-.mold-castings-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
-
 .mold-castings-section .mold-castings-content {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
-    margin: 0;
+    justify-content: center;
+	width: 100;
+    padding: 0;
+    margin: 0 auto;
 }
 
 /* Carousel and Text Content */
@@ -2108,20 +2081,16 @@ section.alternate {
 /* Pattern & Corebox Section */
 
 /* Override container width */
-.pattern-corebox-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
 
 .pattern-corebox-section .pattern-corebox-content {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
-    margin: 0;
+    justify-content: center;
+	width: 100;
+    padding: 0;
+    margin: 0 auto;
 }
 
 /* Carousel and Text Content */
@@ -2245,21 +2214,15 @@ section.alternate {
 
 /* Build-to-Print Services Section */
 
-/* Override container width */
-.build-to-print-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
-
 .build-to-print-section .build-to-print-content {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
-    margin: 0;
+    justify-content: center;
+	width: 100;
+    padding: 0;
+    margin: 0 auto;
 }
 
 /* Carousel and Text Content */
@@ -2383,21 +2346,15 @@ section.alternate {
 
 /* Prototyping Section */
 
-/* Override container width */
-.prototyping-section .container {
-    width: 100%;
-    max-width: none;
-    padding: 0;
-}
-
 .prototyping-section .prototyping-content {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
-    margin: 0;
+    justify-content: center;
+	width: 100;
+    padding: 0;
+    margin: 0 auto;
 }
 
 /* Carousel and Text Content */
