@@ -321,7 +321,7 @@ header {
 
 .hero-text ul {
     font-family: var(--font-body);
-    color: var(--light-gray);
+    color: #E9E9EA;
     line-height: 1.6;
 }
 
