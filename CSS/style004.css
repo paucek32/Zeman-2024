@@ -1,6 +1,6 @@
 /* CSS Variables for Consistency */
 :root {
-    --primary-color: #00539C;
+    --primary-color: #123769;
     --secondary-color: #03396C;
     --accent-color: #FF9800;
     --accent-color-dark: #E68900; /* Darker shade for hover states */
@@ -292,7 +292,7 @@ header {
 .hero-subpage {
     margin-top: 20px;
     padding: 60px 0;
-    background-color: var(--light-gray);
+    background-color: #123769;
 }
 
 .hero-subpage-content {
@@ -309,13 +309,19 @@ header {
 
 .hero-text h1 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .hero-text p {
     font-family: var(--font-body);
-    color: var(--dark-gray);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.hero-text ul {
+    font-family: var(--font-body);
+    color: var(--light-gray);
     line-height: 1.6;
 }
 
@@ -1151,7 +1157,7 @@ textarea:focus {
 /* Quote Section Styles */
 .quote-section {
     padding: 60px 0;
-    background-color: var(--light-gray);
+    background-color: var(--primary-color);
 }
 
 .quote-content {
@@ -1172,7 +1178,7 @@ textarea:focus {
 
 .quote-text h2 {
     font-family: var(--font-heading);
-    color: var(--primary-color); /* Default primary color */
+    color: #ffffff; /* Default primary color */
 	font-size: 2.5rem;
     margin-bottom: 20px;
 }
@@ -1181,7 +1187,7 @@ textarea:focus {
     line-height: 1.8;
     font-size: 1.1rem;
     margin-bottom: 20px;
-    color: #555;
+    color: #ffffff;
 }
 
 /* Restyled Quote Form */
