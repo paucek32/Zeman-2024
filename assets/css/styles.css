@@ -1212,8 +1212,9 @@ h1, h2, h3 { letter-spacing: 0; }
     }
     .home-hero .hero-video,
     .home-hero .hero-shade {
+        top: var(--header);
         bottom: auto;
-        height: calc(var(--header) + 42dvh);
+        height: 42dvh;
     }
     .home-hero .hero-video {
         object-position: 52% top;
@@ -1336,7 +1337,7 @@ h1, h2, h3 { letter-spacing: 0; }
     }
     .home-hero .hero-video,
     .home-hero .hero-shade {
-        height: calc(var(--header) + 36dvh);
+        height: 36dvh;
     }
     .home-hero .hero-video {
         object-position: 50% top;
