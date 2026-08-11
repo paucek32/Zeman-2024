@@ -806,6 +806,99 @@ h1, h2, h3 { letter-spacing: 0; }
     width: auto;
     margin: auto;
 }
+.cert-trigger {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.cert-trigger img {
+    transition: transform 0.22s ease, filter 0.22s ease;
+}
+.cert-trigger:hover img,
+.cert-trigger:focus-visible img {
+    filter: drop-shadow(0 10px 18px rgba(0, 83, 156, 0.18));
+    transform: translateY(-2px);
+}
+.cert-trigger:focus-visible {
+    outline: 3px solid rgba(255, 153, 0, 0.55);
+    outline-offset: 6px;
+    border-radius: 6px;
+}
+.image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 320;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(17, 22, 28, 0.78);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+.image-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.image-modal-content {
+    width: min(760px, 100%);
+    max-height: min(840px, calc(100vh - 48px));
+    overflow: auto;
+    padding: 20px;
+    border-radius: var(--radius);
+    background: #fff;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.38);
+    transform: translateY(18px) scale(0.98);
+    transition: transform 0.24s ease;
+}
+.image-modal.active .image-modal-content {
+    transform: translateY(0) scale(1);
+}
+.image-modal-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.image-modal-header h2 {
+    margin: 0;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    line-height: 1.1;
+}
+.image-modal-close {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+}
+.image-modal-close:hover,
+.image-modal-close:focus-visible {
+    border-color: rgba(0, 83, 156, 0.42);
+    color: var(--blue);
+    outline: 0;
+}
+.image-modal-content > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
 .career-cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

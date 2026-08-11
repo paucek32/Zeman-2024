@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initServiceCycle();
     initImageStacks();
     initJobModals();
+    initImageModals();
     initQuoteForm();
     setCurrentYear();
 });
@@ -190,6 +191,60 @@ function initJobModals() {
         });
 
         modal.querySelectorAll('[data-job-close]').forEach(button => {
+            button.addEventListener('click', () => closeModal(modal));
+        });
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        const activeModal = modals.find(modal => modal.classList.contains('active'));
+        if (activeModal) closeModal(activeModal);
+    });
+}
+
+function initImageModals() {
+    const triggers = [...document.querySelectorAll('[data-image-modal-open]')];
+    const modals = [...document.querySelectorAll('[data-image-modal]')];
+    if (!triggers.length || !modals.length) return;
+
+    let activeTrigger = null;
+
+    const openModal = id => {
+        const modal = document.querySelector('[data-image-modal="' + id + '"]');
+        if (!modal) return;
+
+        activeTrigger = document.querySelector('[data-image-modal-open="' + id + '"]');
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+
+        const panel = modal.querySelector('.image-modal-content');
+        if (panel) panel.focus({ preventScroll: true });
+    };
+
+    const closeModal = modal => {
+        if (!modal) return;
+
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        if (!modals.some(item => item.classList.contains('active'))) {
+            document.body.classList.remove('modal-open');
+        }
+
+        if (activeTrigger) activeTrigger.focus({ preventScroll: true });
+        activeTrigger = null;
+    };
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => openModal(trigger.dataset.imageModalOpen));
+    });
+
+    modals.forEach(modal => {
+        modal.addEventListener('click', event => {
+            if (event.target === modal) closeModal(modal);
+        });
+
+        modal.querySelectorAll('[data-image-modal-close]').forEach(button => {
             button.addEventListener('click', () => closeModal(modal));
         });
     });
