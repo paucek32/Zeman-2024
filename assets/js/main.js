@@ -214,6 +214,12 @@ function initImageModals() {
         if (!modal) return;
 
         activeTrigger = document.querySelector('[data-image-modal-open="' + id + '"]');
+        const modalImage = modal.querySelector('[data-image-modal-image]');
+        if (modalImage && activeTrigger?.dataset.imageModalSrc) {
+            modalImage.src = activeTrigger.dataset.imageModalSrc;
+            modalImage.alt = activeTrigger.dataset.imageModalAlt || modalImage.alt;
+        }
+
         modal.hidden = false;
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
