@@ -478,6 +478,7 @@ h1, h2, h3 { letter-spacing: 0; }
     overflow: hidden;
     background: #fff;
 }
+.home-photo-strip { background: var(--ink); }
 .photo-strip-track {
     display: flex;
     width: max-content;
