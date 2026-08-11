@@ -483,7 +483,7 @@ h1, h2, h3 { letter-spacing: 0; }
     width: max-content;
     gap: 14px;
     padding: 18px 0;
-    animation: marquee 34s linear infinite;
+    animation: marquee var(--marquee-duration, 42s) linear infinite;
 }
 .photo-strip img,
 .photo-strip video {
@@ -562,7 +562,8 @@ h1, h2, h3 { letter-spacing: 0; }
     transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.7s ease;
 }
 .gallery-card img[src^="Media/parts/"][src$=".png"],
-.gallery-card img[src^="Media/parts/"][src$=".PNG"] {
+.gallery-card img[src^="Media/parts/"][src$=".PNG"],
+.gallery-card img[src^="Media/gallery-optimized/parts-"] {
     padding: 10px;
     object-fit: contain;
 }
