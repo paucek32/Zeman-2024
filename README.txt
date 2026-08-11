@@ -4,13 +4,13 @@ This is a static GitHub Pages-friendly concept.
 
 Pages:
 - index.html
-- services.html
 - custom-workholding.html
 - aerospace-tooling.html
 - foundry-tooling.html
 - precision-manufactured-parts.html
 - built-to-print-tooling.html
 - custom-manufacturing.html
+- gallery.html
 - quality.html
 - careers.html
 - quote.html
@@ -19,6 +19,7 @@ Motion:
 - Scroll reveal animation
 - Slow hero image movement
 - Animated photo strips
+- Masonry gallery hover motion
 - Count-up hero stats
 - Rotating active service cards
 
