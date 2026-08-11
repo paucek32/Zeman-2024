@@ -1218,7 +1218,8 @@ h1, h2, h3 { letter-spacing: 0; }
         padding-bottom: 52px;
     }
     .home-hero {
-        padding-top: calc(var(--header) + 42dvh + 28px);
+        margin-top: var(--header);
+        padding-top: calc(42dvh + 28px);
         background: var(--ink);
     }
     .service-detail-hero {
@@ -1227,7 +1228,7 @@ h1, h2, h3 { letter-spacing: 0; }
     }
     .home-hero .hero-video,
     .home-hero .hero-shade {
-        top: var(--header);
+        top: 0;
         bottom: auto;
         height: 42dvh;
     }
@@ -1344,7 +1345,7 @@ h1, h2, h3 { letter-spacing: 0; }
         padding-bottom: 42px;
     }
     .home-hero {
-        padding-top: calc(var(--header) + 36dvh + 24px);
+        padding-top: calc(36dvh + 24px);
     }
     .service-detail-hero {
         padding-top: calc(var(--header) + 24px);
