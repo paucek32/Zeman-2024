@@ -841,6 +841,7 @@ h1, h2, h3 { letter-spacing: 0; }
     pointer-events: none;
     transition: opacity 0.22s ease, visibility 0.22s ease;
 }
+.image-modal[hidden] { display: none; }
 .image-modal.active {
     opacity: 1;
     visibility: visible;

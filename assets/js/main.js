@@ -214,6 +214,7 @@ function initImageModals() {
         if (!modal) return;
 
         activeTrigger = document.querySelector('[data-image-modal-open="' + id + '"]');
+        modal.hidden = false;
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
@@ -227,6 +228,7 @@ function initImageModals() {
 
         modal.classList.remove('active');
         modal.setAttribute('aria-hidden', 'true');
+        modal.hidden = true;
         if (!modals.some(item => item.classList.contains('active'))) {
             document.body.classList.remove('modal-open');
         }
