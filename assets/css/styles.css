@@ -641,6 +641,10 @@ h1, h2, h3 { letter-spacing: 0; }
 .service-detail-hero p:not(.eyebrow) {
     max-width: 700px;
 }
+.quality-hero h1 {
+    font-size: clamp(2.45rem, 5vw, 4.55rem);
+}
+.quality-strip { background: var(--paper); }
 .detail-hero-card {
     overflow: hidden;
     border: 1px solid var(--soft);
