@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initImageStacks();
     initJobModals();
     initImageModals();
+    initGalleryLightbox();
     initQuoteForm();
     setCurrentYear();
 });
@@ -261,6 +262,103 @@ function initImageModals() {
         if (event.key !== 'Escape') return;
         const activeModal = modals.find(modal => modal.classList.contains('active'));
         if (activeModal) closeModal(activeModal);
+    });
+}
+
+function initGalleryLightbox() {
+    const gallery = document.querySelector('.gallery-grid');
+    const modal = document.querySelector('[data-gallery-lightbox]');
+    if (!gallery || !modal) return;
+
+    const images = [...gallery.querySelectorAll('.gallery-card img')];
+    const modalImage = modal.querySelector('[data-gallery-lightbox-image]');
+    const counter = modal.querySelector('[data-gallery-counter]');
+    const closeButton = modal.querySelector('[data-gallery-close]');
+    const previousButton = modal.querySelector('[data-gallery-prev]');
+    const nextButton = modal.querySelector('[data-gallery-next]');
+    const shell = modal.querySelector('.gallery-lightbox-shell');
+    if (!images.length || !modalImage || !shell) return;
+
+    let currentIndex = 0;
+    let activeTrigger = null;
+
+    images.forEach((image, index) => {
+        const card = image.closest('.gallery-card');
+        if (!card) return;
+
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', 'Open gallery image ' + (index + 1) + ' of ' + images.length);
+        card.dataset.galleryIndex = String(index);
+    });
+
+    const showImage = index => {
+        currentIndex = (index + images.length) % images.length;
+        const image = images[currentIndex];
+
+        modalImage.src = image.currentSrc || image.src;
+        modalImage.alt = image.alt || 'Zeman Tool gallery image';
+
+        if (counter) {
+            counter.textContent = 'Image ' + (currentIndex + 1) + ' of ' + images.length;
+        }
+    };
+
+    const openModal = (index, trigger) => {
+        activeTrigger = trigger;
+        showImage(index);
+
+        modal.hidden = false;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        shell.focus({ preventScroll: true });
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        modal.hidden = true;
+
+        if (!document.querySelector('.job-modal.active, .image-modal.active')) {
+            document.body.classList.remove('modal-open');
+        }
+
+        if (activeTrigger) activeTrigger.focus({ preventScroll: true });
+        activeTrigger = null;
+    };
+
+    gallery.addEventListener('click', event => {
+        const card = event.target.closest('.gallery-card');
+        if (!card || !gallery.contains(card)) return;
+
+        openModal(Number(card.dataset.galleryIndex), card);
+    });
+
+    gallery.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+
+        const card = event.target.closest('.gallery-card');
+        if (!card || !gallery.contains(card)) return;
+
+        event.preventDefault();
+        openModal(Number(card.dataset.galleryIndex), card);
+    });
+
+    modal.addEventListener('click', event => {
+        if (event.target === modal) closeModal();
+    });
+
+    if (closeButton) closeButton.addEventListener('click', closeModal);
+    if (previousButton) previousButton.addEventListener('click', () => showImage(currentIndex - 1));
+    if (nextButton) nextButton.addEventListener('click', () => showImage(currentIndex + 1));
+
+    document.addEventListener('keydown', event => {
+        if (!modal.classList.contains('active')) return;
+
+        if (event.key === 'Escape') closeModal();
+        if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (event.key === 'ArrowRight') showImage(currentIndex + 1);
     });
 }
 

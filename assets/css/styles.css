@@ -538,6 +538,7 @@ h1, h2, h3 { letter-spacing: 0; }
     border-radius: var(--radius);
     background: transparent;
     box-shadow: 0 18px 42px rgba(17, 22, 28, 0.13);
+    cursor: pointer;
     transform: translateY(0);
     transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
@@ -571,14 +572,113 @@ h1, h2, h3 { letter-spacing: 0; }
 .gallery-card:nth-child(4n + 1) img { aspect-ratio: 4 / 5; }
 .gallery-card:nth-child(4n + 2) img { aspect-ratio: 1 / 1; }
 .gallery-card:nth-child(5n) img { aspect-ratio: 16 / 10; }
-.gallery-card:hover {
+.gallery-card:hover,
+.gallery-card:focus-visible {
     transform: translateY(-4px);
     box-shadow: 0 24px 54px rgba(17, 22, 28, 0.18);
+    outline: 0;
 }
-.gallery-card:hover::after { opacity: 1; }
-.gallery-card:hover img {
+.gallery-card:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.5), 0 24px 54px rgba(17, 22, 28, 0.18);
+}
+.gallery-card:hover::after,
+.gallery-card:focus-visible::after { opacity: 1; }
+.gallery-card:hover img,
+.gallery-card:focus-visible img {
     transform: scale(1.045);
     filter: saturate(1.08) contrast(1.04);
+}
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 340;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(7, 11, 16, 0.88);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+.gallery-lightbox[hidden] { display: none; }
+.gallery-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.gallery-lightbox-shell {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    width: min(1120px, 100%);
+    max-height: calc(100dvh - 48px);
+    transform: translateY(18px) scale(0.98);
+    transition: transform 0.24s ease;
+}
+.gallery-lightbox.active .gallery-lightbox-shell {
+    transform: translateY(0) scale(1);
+}
+.gallery-lightbox-stage {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    margin: 0;
+}
+.gallery-lightbox-stage img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100dvh - 132px);
+    width: auto;
+    height: auto;
+    border-radius: var(--radius);
+    background: #f7f4ee;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+    object-fit: contain;
+}
+.gallery-lightbox-stage figcaption {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+.gallery-lightbox-close,
+.gallery-lightbox-nav {
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--ink);
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.gallery-lightbox-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    font-size: 1.55rem;
+    line-height: 1;
+}
+.gallery-lightbox-nav {
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+}
+.gallery-lightbox-close:hover,
+.gallery-lightbox-close:focus-visible,
+.gallery-lightbox-nav:hover,
+.gallery-lightbox-nav:focus-visible {
+    background: var(--orange);
+    color: var(--ink);
+    outline: 0;
+    transform: translateY(-1px);
 }
 .gallery-empty {
     padding: 28px;
@@ -1537,6 +1637,33 @@ h1, h2, h3 { letter-spacing: 0; }
         column-gap: 12px;
     }
     .gallery-card { margin-bottom: 12px; }
+    .gallery-lightbox {
+        align-items: end;
+        padding: 14px;
+    }
+    .gallery-lightbox-shell {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .gallery-lightbox-stage {
+        grid-column: 1 / -1;
+        order: 1;
+    }
+    .gallery-lightbox-stage img {
+        max-height: calc(100dvh - 156px);
+    }
+    .gallery-lightbox-prev {
+        order: 2;
+        justify-self: start;
+    }
+    .gallery-lightbox-next {
+        order: 3;
+        justify-self: end;
+    }
+    .gallery-lightbox-close {
+        top: 10px;
+        right: 10px;
+    }
     .photo-strip img,
     .photo-strip video { width: 280px; height: 180px; }
     .logo-row { min-height: 92px; }

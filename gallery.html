@@ -547,6 +547,18 @@
         </section>
     </main>
 
+    <div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="gallery-lightbox-title" data-gallery-lightbox hidden>
+        <div class="gallery-lightbox-shell" tabindex="-1">
+            <button class="gallery-lightbox-close" type="button" aria-label="Close gallery image" data-gallery-close>&times;</button>
+            <button class="gallery-lightbox-nav gallery-lightbox-prev" type="button" aria-label="Previous gallery image" data-gallery-prev>&larr;</button>
+            <figure class="gallery-lightbox-stage">
+                <img src="" alt="" data-gallery-lightbox-image>
+                <figcaption id="gallery-lightbox-title" data-gallery-counter>Gallery image</figcaption>
+            </figure>
+            <button class="gallery-lightbox-nav gallery-lightbox-next" type="button" aria-label="Next gallery image" data-gallery-next>&rarr;</button>
+        </div>
+    </div>
+
     <footer class="site-footer">
         <div class="shell footer-layout">
             <div>
