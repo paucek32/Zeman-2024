@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.zemantool.com/sitemap.xml
+Sitemap: https://zemantool.com/sitemap.xml
